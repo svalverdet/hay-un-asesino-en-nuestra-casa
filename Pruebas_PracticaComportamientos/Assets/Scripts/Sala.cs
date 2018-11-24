@@ -10,8 +10,8 @@ public class Sala{
 	public static GameObject mCollCasa = GameObject.Find("Casa");
 	public static GameObject mCollBar = GameObject.Find("Bar");
 	public static GameObject mCollWC = GameObject.Find("WC");
-	
-	public static Vector3 GetRoomPosition(string roomName){
+
+    public static Vector3 GetRoomPosition(string roomName){
 		GameObject room;
 		if(roomName.Equals("Casa")){
 			room = mCollCasa;

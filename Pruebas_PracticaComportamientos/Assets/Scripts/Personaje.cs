@@ -25,8 +25,7 @@ public abstract class Personaje: MonoBehaviour{
 	// NavMesh
 	protected Vector3 goal;
 	protected NavMeshAgent agent;
-	
-	
+
 	// Métodos
 	
 	public abstract void UpdatePersonaje();
@@ -39,8 +38,12 @@ public abstract class Personaje: MonoBehaviour{
 		goal = Sala.GetRoomPosition(room);
 		agent.destination = goal;
 	}
-	
-	public virtual void ChangeLocation(Sala.Location loc){ this.mLocation = loc;}
+    public virtual void GoTo(Vector3 goal)
+    {
+        agent.destination = goal;
+    }
+
+    public virtual void ChangeLocation(Sala.Location loc){ this.mLocation = loc;}
 	
 	public virtual void println(string msg){ Debug.Log(this.mName+": "+msg);}
 	
@@ -56,7 +59,22 @@ public abstract class Personaje: MonoBehaviour{
 	
 	// max NOT included
 	public virtual int GetRandom(int min, int max){
-		System.Random rnd = new System.Random(); int n = rnd.Next(min,max); return n;
+		System.Random rnd = new System.Random();
+        int n = rnd.Next(min,max);
+        return n;
 	}
-	
+
+    public virtual bool PathComplete()
+    {
+        if (Vector3.Distance(agent.destination, agent.transform.position) <= agent.stoppingDistance)
+        {
+            if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 }

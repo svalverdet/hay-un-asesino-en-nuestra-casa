@@ -19,12 +19,6 @@ public class GlobalState : GenericState{
 		
 	}
 	override public void Execute(Personaje personaje){
-		Adulto a = (Adulto) personaje;
-		if(a.TienePis() && (personaje.GetFSM().GetCurrentState() != EstarEnElWC.GetInstance())){
-			personaje.println("Ay que me hago pis!!");
-			personaje.mLabel.text = "Ay que me hago pis!!";
-			personaje.GetFSM().ChangeState(EstarEnElWC.GetInstance());
-		}
 			
 	}
 	override public void Exit(Personaje personaje){
