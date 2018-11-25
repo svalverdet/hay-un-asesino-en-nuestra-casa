@@ -32,7 +32,7 @@ public class Anciano : Personaje {
         mFSM = new FSM(this);
         mFSM.SetCurrentState(Deambular.GetInstance());
         mFSM.ChangeState(Deambular.GetInstance());
-        mFSM.SetGlobalState(GlobalState.GetInstance());
+        //mFSM.SetGlobalState(GlobalState.GetInstance());
     }
 
     override public void UpdatePersonaje()

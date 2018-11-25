@@ -26,7 +26,8 @@ public class Adulto : Personaje {
 		mFSM = new FSM(this);
 		mFSM.SetCurrentState(EstarEnCasa.GetInstance());
 		mFSM.SetPreviousState(EstarEnCasa.GetInstance());
-		mFSM.SetGlobalState(GlobalState.GetInstance());
+		mFSM.SetGlobalState(GlobalStateAdulto.GetInstance());
+		mFSM.GetCurrentState().Enter(this);
 	}
 	
 	override public void UpdatePersonaje(){
