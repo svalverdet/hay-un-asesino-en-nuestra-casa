@@ -9,12 +9,12 @@ public class Adulto : Personaje {
 	private int mVejiga;
 	private int LIMITE_SED = 6;
 	private int LIMITE_VEJIGA = 14;
-	
-       
-	void Start(){
-		
-		// Variables del padre
-		mLastTimeUpdated = 0.0f;
+
+
+    override protected void Start(){
+        base.Start();
+        // Variables del padre
+        mLastTimeUpdated = 0.0f;
 		mIntervalToUpdate = 2.0f;
 		agent = GetComponent<NavMeshAgent>();
 		ChangeLocation(Sala.Location.Casa);

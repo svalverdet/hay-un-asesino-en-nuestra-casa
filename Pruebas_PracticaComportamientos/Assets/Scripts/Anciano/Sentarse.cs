@@ -34,13 +34,14 @@ public class Sentarse : GenericState {
             personaje.println(msg);
             personaje.mLabel.text = msg;
             sit = true;
-        }else if (sit && Random.value * 100 < 10)
+        }else if (sit && Random.value * 100 < 30)
         {
             personaje.GetFSM().ChangeState(Deambular.GetInstance());
         }
     }
     override public void Exit(Personaje personaje)
     {
+
     }
     //Devuelve el asiento más cercano
     private Vector3 GetSeatLocation(Personaje personaje)

@@ -9,7 +9,10 @@ public abstract class Personaje: MonoBehaviour{
 	
 	public string mName;
 	public Text mLabel;
-	
+
+    //Controller
+    protected Controller controller;
+
 	// Instancia de la máquina de estados
 	protected FSM mFSM;
 	
@@ -28,19 +31,31 @@ public abstract class Personaje: MonoBehaviour{
 
 	// Métodos
 	
+    protected virtual void Start()
+    {
+        controller = GameObject.Find("WorldController").GetComponent<Controller>();
+    }
+
 	public abstract void UpdatePersonaje();
 	
+    public virtual Controller GetController() { return controller; }
 	public virtual string GetName(){return this.mName;}
 	public virtual FSM GetFSM(){ return mFSM;}
 	public virtual Sala.Location GetLocation(){ return mLocation;}
 	
 	public virtual void GoTo(string room){
-		goal = Sala.GetRoomPosition(room);
+        agent.isStopped = false;
+        goal = Sala.GetRoomPosition(room);
 		agent.destination = goal;
 	}
     public virtual void GoTo(Vector3 goal)
     {
+        agent.isStopped = false;
         agent.destination = goal;
+    }
+    public virtual void Stop()
+    {
+        agent.isStopped = true;
     }
 
     public virtual void ChangeLocation(Sala.Location loc){ this.mLocation = loc;}
@@ -53,7 +68,7 @@ public abstract class Personaje: MonoBehaviour{
 		if(otherName == "Casa" || otherName == "Bar" || otherName == "WC"){
 			Sala.Location roomToGo = (Sala.Location)System.Enum.Parse(typeof(Sala.Location), other.gameObject.name);
 			ChangeLocation(roomToGo);
-			mLabel.text = "";
+			//mLabel.text = "";
 		}
     }
 	
@@ -66,12 +81,9 @@ public abstract class Personaje: MonoBehaviour{
 
     public virtual bool PathComplete()
     {
-        if (Vector3.Distance(agent.destination, agent.transform.position) <= agent.stoppingDistance)
+        if (Vector3.Distance(agent.destination, agent.transform.position) <= agent.stoppingDistance + 2)
         {
-            if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
-            {
-                return true;
-            }
+            return true;
         }
 
         return false;

@@ -19,4 +19,14 @@ public class Controller : MonoBehaviour {
 			personajes[i].UpdatePersonaje();
 		}
 	}
+
+    public List<Personaje> GetPersonajesByType<T>()
+    {
+        List<Personaje> aux = new List<Personaje>();
+        foreach (Personaje p in personajes)
+        {
+            if (p.GetComponent<T>() != null) aux.Add(p);
+        }
+        return aux;
+    }
 }
