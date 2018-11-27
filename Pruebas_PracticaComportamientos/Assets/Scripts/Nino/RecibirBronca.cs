@@ -1,4 +1,4 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,17 +14,29 @@ public class RecibirBronca : GenericState{
 	}
 	
 	override public void Enter(Personaje personaje){
-		personaje.println("Vooooy!");
+		
+		//if(personaje.GetLocation() != Sala.Location.Casa){
+			personaje.println("Voooooooy!!");
+			personaje.mLabel.text = "Voooooooy!!";
+			personaje.GoTo("Casa");
+		//}else{
+			//personaje.Stop();
+		//}
 	}
 	override public void Execute(Personaje personaje){
-		personaje.println("que sí lo que tú digas");
-		Nino a = (Nino) personaje;
-		a.GetFSM().ChangeState(a.GetFSM().GetPreviousState());
-		Adulto n = (Adulto)Sala.GetPersonaje("Adulto");
-		n.GetFSM().ChangeState(n.GetFSM().GetPreviousState());
+		
+		if(personaje.GetLocation() == Sala.Location.Casa){
+			int num = personaje.GetRandom(1,6);
+			if(num<3){
+				personaje.println("Que sí lo que tú digas");
+				personaje.mLabel.text = "Que sí lo que tú digas";
+			}
+		}else{
+			personaje.println("Estoy yendo");
+			
+		}
 	}
 	override public void Exit(Personaje personaje){
-		
+		personaje.println("que pesao el papa con la peta");
 	}
 }
-*/

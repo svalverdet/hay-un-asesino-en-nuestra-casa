@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pruebas_PracticaComportamientos", "Pruebas_PracticaComportamientos.csproj", "{08AF4ACF-6B17-ADA1-EEE6-1CDC5833D958}"
 EndProject
 Global

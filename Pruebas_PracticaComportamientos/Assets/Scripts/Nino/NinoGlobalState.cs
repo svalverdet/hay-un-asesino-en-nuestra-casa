@@ -14,13 +14,17 @@ public class NinoGlobalState : GenericState {
 	}
 	
 	override public void Enter(Personaje personaje){
-		
 	}
 	override public void Execute(Personaje personaje){
 		Nino a = (Nino) personaje;
-		if(a.TienePis()){
-			a.println("Ayy que me hago pipiii");
+		if(a.GetFSM().GetCurrentState() != NinoEstarEnElWC.GetInstance()  
+			&&  a.GetFSM().GetCurrentState() != RecibirBronca.GetInstance()  
+			&&  a.TienePis())
+		{
 			a.GetFSM().ChangeState(NinoEstarEnElWC.GetInstance());
+		}else if(a.GetVejiga() > 20 && !a.GetPisEncima()){
+			a.SetPisEncima(true);
+			personaje.mLabel.text = "Me cagao encima";
 		}
 			
 			

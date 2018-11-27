@@ -27,6 +27,7 @@ public class EstarEnCasa : GenericState {
 			// Hacer cosas de casa
 			Adulto a = (Adulto) personaje;
 			a.IncrementarSed();
+			a.IncrementarAburrimiento();
 			if(a.TieneSed()){
 				int num = personaje.GetRandom(1,4);
 				string msg;
@@ -40,15 +41,11 @@ public class EstarEnCasa : GenericState {
 				personaje.println(msg);
 				personaje.mLabel.text = msg;
 				personaje.GetFSM().ChangeState(EstarEnElBar.GetInstance());
+				
+			}else if(a.EstaAburrido()){
+				personaje.GetFSM().ChangeState(EcharBronca.GetInstance());
 			}
 		}
-		
-		/*int num = personaje.GetRandom(1,5);
-		Debug.Log(num);
-		if(num == 2){
-			personaje.GetFSM().ChangeState(EcharBronca.GetInstance());
-		}
-		*/
 	}
 	override public void Exit(Personaje personaje){
 	}

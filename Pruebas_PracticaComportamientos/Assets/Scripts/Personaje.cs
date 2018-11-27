@@ -57,6 +57,10 @@ public abstract class Personaje: MonoBehaviour{
     {
         agent.isStopped = true;
     }
+	
+	public bool IsAgentStopped(){
+		return agent.isStopped;
+	}
 
     public virtual void ChangeLocation(Sala.Location loc){ this.mLocation = loc;}
 	
@@ -71,6 +75,14 @@ public abstract class Personaje: MonoBehaviour{
 			//mLabel.text = "";
 		}
     }
+	
+	void OnTriggerExit(Collider other){
+		String otherName = other.gameObject.name;
+		if(otherName == "Casa" || otherName == "Bar" || otherName == "WC"){
+			Sala.Location roomToGo = Sala.Location.None;
+			ChangeLocation(roomToGo);
+		}
+	}
 	
 	// max NOT included
 	public virtual int GetRandom(int min, int max){

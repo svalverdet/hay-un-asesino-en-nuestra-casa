@@ -2,39 +2,57 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Nino : Personaje {
 
-	public enum Location{Casa, Bar, WC};
-	
-	// Instancia de la máquina de estados
-	private FSM mFSM;
-	private Location mLocation;
 	private int mVejiga;
+	private int LIMITE_VEJIGA = 14;
+	private bool mPisEncima = false;
 	
-	/*
-	public Nino(int id, string name): base(id, name){
-		this.mVejiga = 2;
-		this.mLocation = Location.Casa;
+	override protected  void Start(){
 		
-		this.mFSM = new FSM(this);
-		this.mFSM.SetCurrentState(Jugando.GetInstance());
-		this.mFSM.SetGlobalState(NinoGlobalState.GetInstance());
-	}*/
+		base.Start();
+		
+		// Variables del padre
+		mLastTimeUpdated = 0.0f;
+		mIntervalToUpdate = 2.0f;
+		agent = GetComponent<NavMeshAgent>();
+		ChangeLocation(Sala.Location.Casa);
+		
+		// Variables propias
+		mVejiga = 2;
+		
+		mFSM = new FSM(this);
+		mFSM.SetCurrentState(Jugando.GetInstance());
+		mFSM.SetPreviousState(Jugando.GetInstance());
+		mFSM.SetGlobalState(NinoGlobalState.GetInstance());
+		mFSM.GetCurrentState().Enter(this);
+	}
 	
 	override public void UpdatePersonaje(){
-		this.mFSM.Update();
-		this.mVejiga+=2;
+		// No se actualiza de manera constante
+		if(Sala.timer-mLastTimeUpdated > mIntervalToUpdate){
+			mLastTimeUpdated = Sala.timer;
+			mFSM.Update();
+			mVejiga+=2;
+		}
+		
+		// Se muestra el texto
+		Vector3 labelPos = Camera.main.WorldToScreenPoint(this.transform.position);
+		mLabel.transform.position = labelPos;
 		
 	}
 	
-	public FSM GetFSM(){ return this.mFSM;}
-	public Location GetLocation(){ return this.mLocation;}
-	public int GetVejiga(){ return this.mVejiga;}
+	// Métodos
 	
-	public void ChangeLocation(Location loc){ this.mLocation = loc;}
-	public bool TienePis(){ return this.mVejiga >= 6;}	
-	public void EfectosDelWC(){ this.mVejiga = 0;}
+	public int GetVejiga(){ return this.mVejiga;}
+	public void SetVejiga(int num){ this.mVejiga = num;}
+	public bool GetPisEncima(){ return this.mPisEncima;}
+	public void SetPisEncima(bool pisEncima){ this.mPisEncima = pisEncima;}
+	
+	public bool TienePis(){ return this.mVejiga >= LIMITE_VEJIGA;}	
+	public void EfectosDelWC(){ this.mVejiga-=5; this.mPisEncima = false;}
 	
 	
 }

@@ -7,12 +7,16 @@ public class Adulto : Personaje {
 
 	private int mSed;
 	private int mVejiga;
-	private int LIMITE_SED = 6;
-	private int LIMITE_VEJIGA = 14;
+	private int mAburrimiento;
+	private int LIMITE_ABURRIMIENTO = 15;
+	private int LIMITE_SED = 9;
+	private int LIMITE_VEJIGA = 18;
 
 
     override protected void Start(){
+		
         base.Start();
+		
         // Variables del padre
         mLastTimeUpdated = 0.0f;
 		mIntervalToUpdate = 2.0f;
@@ -22,6 +26,7 @@ public class Adulto : Personaje {
 		// Variables propias
 		mSed = 5;
 		mVejiga = 2;
+		mAburrimiento = 5;
 		
 		mFSM = new FSM(this);
 		mFSM.SetCurrentState(EstarEnCasa.GetInstance());
@@ -36,7 +41,6 @@ public class Adulto : Personaje {
 		if(Sala.timer-mLastTimeUpdated > mIntervalToUpdate){
 			mLastTimeUpdated = Sala.timer;
 			mFSM.Update();
-			mVejiga+=2;
 		}
 		
 		// Se muestra el texto
@@ -49,12 +53,18 @@ public class Adulto : Personaje {
 	
 	public int GetSed(){ return mSed;}
 	public int GetVejiga(){ return mVejiga;}
+	public int GetAburrimiento(){ return mAburrimiento;}
 	
 	public bool TieneSed(){ return mSed >= LIMITE_SED;}
 	public bool TienePis(){ return mVejiga >= LIMITE_VEJIGA;}
-	public void IncrementarSed(){ int n = GetRandom(1,3); mSed += n;}
-	public void EfectosDelBar(){ mSed = 0;}
+	public bool EstaAburrido(){ return mAburrimiento >= LIMITE_ABURRIMIENTO;}
 	
+	public void IncrementarSed(){ int n = GetRandom(1,4); mSed += n;}
+	public void IncrementarVejiga(){ mVejiga+=2;}
+	public void IncrementarAburrimiento(){ mAburrimiento+=2;}
+	
+	public void EfectosDelBar(){ mSed = 0;}
+	public void EfectosDeLaBronca(){ mAburrimiento -= 3; mSed += 2;}
 	public void EfectosDelWC(){ mSed += 1; mVejiga = 0;}
 	
 }

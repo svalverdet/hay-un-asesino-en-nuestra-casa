@@ -17,7 +17,9 @@ public class Anciano : Personaje {
 
     override protected void Start()
     {
+		
         base.Start();
+		
         // Variables del padre
         mLastTimeUpdated = 0.0f;
         mIntervalToUpdate = 2.0f;
