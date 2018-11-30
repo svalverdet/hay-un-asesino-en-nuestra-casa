@@ -9,37 +9,29 @@ public class Roomba : Personaje {
 
     override protected void Start()
     {
-        base.Start();
         // Variables del padre
-        mLastTimeUpdated = 0.0f;
-        mIntervalToUpdate = 2.0f;
+        base.Start();
+		
         agent = GetComponent<NavMeshAgent>();
-        ChangeLocation(Sala.Location.Casa);
-
-        // Variables propias
-        manchas = new List<GameObject>();
+        ChangeLocation(Sala.Location.Cocina);
 
         mFSM = new FSM(this);
         mFSM.SetCurrentState(IdleRoomba.GetInstance());
         mFSM.SetPreviousState(IdleRoomba.GetInstance());
-        //mFSM.SetGlobalState(AncianoGlobal.GetInstance());
         mFSM.GetCurrentState().Enter(this);
+		
+        // Variables propias
+        manchas = new List<GameObject>();
+
     }
 
     override public void UpdatePersonaje()
     {
-
-        // No se actualiza de manera constante
-        if (Sala.timer - mLastTimeUpdated > mIntervalToUpdate)
-        {
-            mLastTimeUpdated = Sala.timer;
-            mFSM.Update();
-        }
-
-        // Se muestra el texto
-        Vector3 labelPos = Camera.main.WorldToScreenPoint(this.transform.position);
-        mLabel.transform.position = labelPos;
+		mFSM.Update();
     }
+	
+	
+	// Métodos
 
     public List<GameObject> GetManchas()
     {

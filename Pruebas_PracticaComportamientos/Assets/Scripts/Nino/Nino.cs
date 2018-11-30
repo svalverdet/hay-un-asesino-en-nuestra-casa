@@ -6,53 +6,45 @@ using UnityEngine.AI;
 
 public class Nino : Personaje {
 
-	private int mVejiga;
-	private int LIMITE_VEJIGA = 14;
-	private bool mPisEncima = false;
+	private Adulto mAdultoBronca;
 	
-	override protected  void Start(){
-		
+	override protected  void Start()
+	{
+		// Variables del padre
 		base.Start();
 		
-		// Variables del padre
-		mLastTimeUpdated = 0.0f;
-		mIntervalToUpdate = 2.0f;
 		agent = GetComponent<NavMeshAgent>();
-		ChangeLocation(Sala.Location.Casa);
+		ChangeLocation(Sala.Location.HabitacionNino);
 		
-		// Variables propias
 		mVejiga = 2;
+		ALERTA_VEJIGA = 14;
+		MAX_LIMITE_VEJIGA = 20;
 		
 		mFSM = new FSM(this);
 		mFSM.SetCurrentState(Jugando.GetInstance());
 		mFSM.SetPreviousState(Jugando.GetInstance());
 		mFSM.SetGlobalState(NinoGlobalState.GetInstance());
 		mFSM.GetCurrentState().Enter(this);
+		
+		// Variables propias
+		// ...
+		
 	}
 	
-	override public void UpdatePersonaje(){
-		// No se actualiza de manera constante
-		if(Sala.timer-mLastTimeUpdated > mIntervalToUpdate){
-			mLastTimeUpdated = Sala.timer;
-			mFSM.Update();
-			mVejiga+=2;
-		}
-		
-		// Se muestra el texto
-		Vector3 labelPos = Camera.main.WorldToScreenPoint(this.transform.position);
-		mLabel.transform.position = labelPos;
-		
+	override public void UpdatePersonaje()
+	{
+		mFSM.Update();
+		mVejiga+=2;
 	}
+	
 	
 	// Métodos
 	
-	public int GetVejiga(){ return this.mVejiga;}
-	public void SetVejiga(int num){ this.mVejiga = num;}
-	public bool GetPisEncima(){ return this.mPisEncima;}
-	public void SetPisEncima(bool pisEncima){ this.mPisEncima = pisEncima;}
+	public void EfectosDelWC(){ this.mVejiga-=5;}
 	
-	public bool TienePis(){ return this.mVejiga >= LIMITE_VEJIGA;}	
-	public void EfectosDelWC(){ this.mVejiga-=5; this.mPisEncima = false;}
+	public Adulto GetAdultoBronca(){ return this.mAdultoBronca;}
+	public void SetAdultoBronca(Adulto a){ this.mAdultoBronca = a;}
+	
 	
 	
 }

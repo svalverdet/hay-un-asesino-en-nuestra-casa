@@ -4,67 +4,52 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class Adulto : Personaje {
+	
+	private Perro perro;
+	private Nino nino;
 
-	private int mSed;
-	private int mVejiga;
-	private int mAburrimiento;
-	private int LIMITE_ABURRIMIENTO = 15;
-	private int LIMITE_SED = 9;
-	private int LIMITE_VEJIGA = 18;
-
-
-    override protected void Start(){
-		
+    override protected void Start()
+	{
+		// Variables del padre
         base.Start();
 		
-        // Variables del padre
-        mLastTimeUpdated = 0.0f;
-		mIntervalToUpdate = 2.0f;
 		agent = GetComponent<NavMeshAgent>();
-		ChangeLocation(Sala.Location.Casa);
+		ChangeLocation(Sala.Location.Salon);
 		
-		// Variables propias
-		mSed = 5;
 		mVejiga = 2;
 		mAburrimiento = 5;
+		ALERTA_ABURRIMIENTO = 15;
+		ALERTA_VEJIGA = 18;
 		
 		mFSM = new FSM(this);
 		mFSM.SetCurrentState(EstarEnCasa.GetInstance());
 		mFSM.SetPreviousState(EstarEnCasa.GetInstance());
 		mFSM.SetGlobalState(GlobalStateAdulto.GetInstance());
 		mFSM.GetCurrentState().Enter(this);
+		
+		// Variables propias
+		// ...
 	}
 	
-	override public void UpdatePersonaje(){
-		
-		// No se actualiza de manera constante
-		if(Sala.timer-mLastTimeUpdated > mIntervalToUpdate){
-			mLastTimeUpdated = Sala.timer;
-			mFSM.Update();
-		}
-		
-		// Se muestra el texto
-		Vector3 labelPos = Camera.main.WorldToScreenPoint(this.transform.position);
-		mLabel.transform.position = labelPos;
+	override public void UpdatePersonaje()
+	{
+		mFSM.Update();
+		IncrementarVejiga();
 	}
 	
 	
 	// Métodos
 	
-	public int GetSed(){ return mSed;}
-	public int GetVejiga(){ return mVejiga;}
-	public int GetAburrimiento(){ return mAburrimiento;}
-	
-	public bool TieneSed(){ return mSed >= LIMITE_SED;}
-	public bool TienePis(){ return mVejiga >= LIMITE_VEJIGA;}
-	public bool EstaAburrido(){ return mAburrimiento >= LIMITE_ABURRIMIENTO;}
-	
-	public void IncrementarSed(){ int n = GetRandom(1,4); mSed += n;}
-	public void IncrementarVejiga(){ mVejiga+=2;}
+	public void IncrementarVejiga(){ mVejiga+=1;}
 	public void IncrementarAburrimiento(){ mAburrimiento+=2;}
 	
-	public void EfectosDelBar(){ mSed = 0;}
-	public void EfectosDeLaBronca(){ mAburrimiento -= 3; mSed += 2;}
-	public void EfectosDelWC(){ mSed += 1; mVejiga = 0;}
+	public void EfectosDeLaBronca(){ mAburrimiento -= 5; }
+	public void EfectosDelWC(){mVejiga -= 4;}
+	public void EfectosDelBar(){ mAburrimiento -= 5; mVejiga += 1;}
+	
+	public Nino GetNinoBronca(){ return nino;}
+	public void SetNinoBronca(Nino n){ nino = n;}
+	public Perro GetPerroAtencion(){return perro;}
+	public void SetPerroAtencion(Perro p){ perro = p;}
 	
 }

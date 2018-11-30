@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Paseo : GenericState {
-    private List<string> locations;
-    private string actualLocation;
 
     #region SINGLETON
     private static Paseo INSTANCE;
@@ -21,10 +19,8 @@ public class Paseo : GenericState {
     #endregion
     override public void Enter(Personaje personaje)
     {
-        personaje.mLabel.text = "Voy a pasear";
         personaje.println("A pasear");
-        locations = new List<string>() { "Casa", "Bar", "WC" };
-        personaje.GoTo(GetRandomLocation());
+        personaje.GoTo(Sala.GetRandomRoomPositionExcept(personaje.GetLocation()));
     }
 
     override public void Execute(Personaje personaje)
@@ -37,13 +33,5 @@ public class Paseo : GenericState {
     override public void Exit(Personaje personaje)
     {
     }
-    private string GetRandomLocation()
-    {
-        int index = Mathf.FloorToInt(Random.value * locations.Count);
-        string nextLocation = locations[index];
-        locations.RemoveAt(index);
-        locations.Add(actualLocation);
-        actualLocation = nextLocation;
-        return actualLocation;
-    }
+	
 }

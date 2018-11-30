@@ -15,25 +15,22 @@ public class RecibirBronca : GenericState{
 	
 	override public void Enter(Personaje personaje){
 		
-		//if(personaje.GetLocation() != Sala.Location.Casa){
+		//if(personaje.GetLocation() != Sala.Location.Salon){
 			personaje.println("Voooooooy!!");
-			personaje.mLabel.text = "Voooooooy!!";
-			personaje.GoTo("Casa");
+			Vector3 loc = ((Nino)personaje).GetAdultoBronca().transform.position;
+			personaje.GoTo(loc);
 		//}else{
 			//personaje.Stop();
 		//}
 	}
 	override public void Execute(Personaje personaje){
 		
-		if(personaje.GetLocation() == Sala.Location.Casa){
+		if(personaje.GetLocation() == Sala.Location.Salon)
+		{
 			int num = personaje.GetRandom(1,6);
 			if(num<3){
 				personaje.println("Que sí lo que tú digas");
-				personaje.mLabel.text = "Que sí lo que tú digas";
 			}
-		}else{
-			personaje.println("Estoy yendo");
-			
 		}
 	}
 	override public void Exit(Personaje personaje){

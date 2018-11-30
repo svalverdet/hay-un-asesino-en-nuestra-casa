@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Deambular : GenericState{
 
-    private List<string> locations;
-    private string actualLocation;
-
     #region SINGLETON
     private static Deambular INSTANCE;
 
@@ -22,9 +19,8 @@ public class Deambular : GenericState{
     #endregion
     override public void Enter(Personaje personaje)
     {
-        personaje.mLabel.text = "Voy a deambular";
-        locations = new List<string>() { "Casa", "Bar", "WC" };
-        personaje.GoTo(GetRandomLocation());
+        personaje.println("Voy a deambular");
+        personaje.GoTo(Sala.GetRandomRoomPositionExcept(personaje.GetLocation()));
     }
 
     override public void Execute(Personaje personaje)
@@ -32,7 +28,7 @@ public class Deambular : GenericState{
         if (personaje.PathComplete())
         {
             string msg = "";
-            if (personaje.GetLocation() == Sala.Location.Casa)
+            if (personaje.GetLocation() == Sala.Location.Salon)
             {
                 msg = "Me piro de casa";
             }
@@ -44,25 +40,19 @@ public class Deambular : GenericState{
             {
                 msg = "No se para que vengo aquí si tengo pañales";
             }
-            personaje.GoTo(GetRandomLocation());
+			
+            personaje.GoTo(Sala.GetRandomRoomPositionExcept(personaje.GetLocation()));
             personaje.println(msg);
-            personaje.mLabel.text = msg;
         }
+		
         if(Random.value * 100 < 5)
             personaje.GetFSM().ChangeState(Sentarse.GetInstance());
 
     }
+	
     override public void Exit(Personaje personaje)
     {
     }
-    private string GetRandomLocation()
-    {
-        int index = Mathf.FloorToInt(Random.value * locations.Count);
-        string nextLocation = locations[index];
-        locations.RemoveAt(index);
-        locations.Add(actualLocation);
-        actualLocation = nextLocation;
-        return actualLocation;
-    }
+	
 
 }

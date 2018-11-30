@@ -19,7 +19,9 @@ public class IdleRoomba : GenericState {
     #endregion
     override public void Enter(Personaje personaje)
     {
-        personaje.mLabel.text = "No hay manchas cerca";
+		if(personaje.GetLocation() != Sala.Location.Cocina)
+			personaje.GoTo(Sala.Location.Cocina);
+        personaje.println("No hay manchas cerca");
     }
 
     override public void Execute(Personaje personaje)

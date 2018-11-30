@@ -18,11 +18,17 @@ public class GlobalStateAdulto : GenericState{
 	override public void Enter(Personaje personaje){
 		
 	}
+	
 	override public void Execute(Personaje personaje){
+		
 		Adulto a = (Adulto) personaje;
-		if(a.TienePis() && (personaje.GetFSM().GetCurrentState() != EstarEnElWC.GetInstance())){
+		if(a.TienePis() 
+			&& (personaje.GetFSM().GetCurrentState() != EstarEnElWC.GetInstance())
+			&& (personaje.GetFSM().GetCurrentState() != EstarEnElBar.GetInstance())
+			&& (personaje.GetFSM().GetCurrentState() != EcharBronca.GetInstance())
+			&& (personaje.GetFSM().GetCurrentState() != AtenderPerro.GetInstance()))
+		{
 			personaje.println("Ay que me hago pis!!");
-			personaje.mLabel.text = "Ay que me hago pis!!";
 			personaje.GetFSM().ChangeState(EstarEnElWC.GetInstance());
 		}
 			

@@ -16,34 +16,25 @@ public class EstarEnCasa : GenericState {
 	#endregion
 	
 	override public void Enter(Personaje personaje){
-		personaje.GoTo("Casa");
+		personaje.GoTo(Sala.Location.Salon);
 	}
 	
 	override public void Execute(Personaje personaje){
 		
 		// Sólo entra si el personaje se encuentra ya en la localización
-		if(personaje.GetLocation() == Sala.Location.Casa){
+		if(personaje.GetLocation() == Sala.Location.Salon){
 			
 			// Hacer cosas de casa
 			Adulto a = (Adulto) personaje;
-			a.IncrementarSed();
 			a.IncrementarAburrimiento();
-			if(a.TieneSed()){
-				int num = personaje.GetRandom(1,4);
-				string msg;
-				if(num == 1){
-					msg = "Voy a comprar tabaco";
-				}else if(num == 2){
-					msg = "Cariño me voy un rato con los colegas al club de literatura";
+			float rnd = Random.value * 100;
+			if(a.EstaAburrido()){
+				if(rnd<50){
+					personaje.GetFSM().ChangeState(EcharBronca.GetInstance());
 				}else{
-					msg = "Me voy a dar un voltio";
+					personaje.GetFSM().ChangeState(EstarEnElBar.GetInstance());
 				}
-				personaje.println(msg);
-				personaje.mLabel.text = msg;
-				personaje.GetFSM().ChangeState(EstarEnElBar.GetInstance());
 				
-			}else if(a.EstaAburrido()){
-				personaje.GetFSM().ChangeState(EcharBronca.GetInstance());
 			}
 		}
 	}

@@ -14,16 +14,21 @@ public class EstarEnElWC : GenericState{
 	}
 	
 	override public void Enter(Personaje personaje){
-		personaje.GoTo("WC");
+		personaje.GoTo(Sala.Location.WC);
 	}
 	
 	override public void Execute(Personaje personaje){
-		if(personaje.GetLocation() == Sala.Location.WC){
-			personaje.println("Ahh...Feels good man");
-			personaje.mLabel.text = "Ahh...Feels good man";
+		
+		if(personaje.PathComplete() && personaje.GetLocation() == Sala.Location.WC)
+		{
 			Adulto a = (Adulto) personaje;
 			a.EfectosDelWC();
-			personaje.GetFSM().ChangeState(personaje.GetFSM().GetPreviousState());
+			if(personaje.GetVejiga()<0)
+			{
+				personaje.VaciarVejiga();
+				personaje.println("Ahh...Feels good man");
+				personaje.GetFSM().ChangeState(EstarEnCasa.GetInstance());
+			}
 		}
 	}
 	override public void Exit(Personaje personaje){

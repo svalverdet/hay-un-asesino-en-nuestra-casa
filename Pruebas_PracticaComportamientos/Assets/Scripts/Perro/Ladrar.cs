@@ -21,8 +21,8 @@ public class Ladrar : GenericState {
     #endregion
     override public void Enter(Personaje personaje)
     {
+		personaje.mLabel.text = "Wof Wof";
         adultos = personaje.GetController().GetPersonajesByType<Adulto>();
-        personaje.mLabel.text = "Wof Wof";
         BroadCast();
     }
 
@@ -32,9 +32,12 @@ public class Ladrar : GenericState {
         else personaje.mLabel.text = "Ladro";
         BroadCast();
     }
+	
     override public void Exit(Personaje personaje)
     {
     }
+	
+	
     private void BroadCast()
     {
         if (adultos.Count > 0)

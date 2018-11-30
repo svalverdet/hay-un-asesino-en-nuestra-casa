@@ -14,20 +14,18 @@ public class Jugando : GenericState{
 	}
 	
 	override public void Enter(Personaje personaje){
-		personaje.GoTo("Casa");
-		personaje.println("Me voy a jugar");
-		personaje.mLabel.text = "Me voy a jugar";
+		if(personaje.GetLocation() != Sala.Location.HabitacionNino){
+			personaje.GoTo(Sala.Location.HabitacionNino);
+			personaje.println("Me voy a jugar");
+		}
 	}
 	
 	override public void Execute(Personaje personaje){
-		if(personaje.GetLocation() == Sala.Location.Casa){
-			personaje.println("Yupii");
-			personaje.mLabel.text = "Yupii mira papi soy bueno a que si papi";
+		if(personaje.GetLocation() == Sala.Location.HabitacionNino){
 		}
 	}
 	
 	override public void Exit(Personaje personaje){
 		personaje.println("Voy a dejar de jugar");
-		personaje.mLabel.text = "Voy a dejar de jugar";
 	}
 }

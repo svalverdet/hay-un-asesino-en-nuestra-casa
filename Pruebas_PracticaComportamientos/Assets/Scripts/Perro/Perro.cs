@@ -7,35 +7,24 @@ public class Perro : Personaje {
 
     override protected void Start()
     {
+		// Variables del padre
         base.Start();
-        // Variables del padre
-        mLastTimeUpdated = 0.0f;
-        mIntervalToUpdate = 2.0f;
+        
         agent = GetComponent<NavMeshAgent>();
-        ChangeLocation(Sala.Location.Casa);
-
-        // Variables propias
+        ChangeLocation(Sala.Location.Entrada);
 
         mFSM = new FSM(this);
         mFSM.SetCurrentState(IdlePerro.GetInstance());
         mFSM.SetPreviousState(IdlePerro.GetInstance());
-        //mFSM.SetGlobalState(AncianoGlobal.GetInstance());
         mFSM.GetCurrentState().Enter(this);
+		
+		// Variables propias
+		// ...
     }
 
     override public void UpdatePersonaje()
     {
-
-        // No se actualiza de manera constante
-        if (Sala.timer - mLastTimeUpdated > mIntervalToUpdate)
-        {
-            mLastTimeUpdated = Sala.timer;
-            mFSM.Update();
-        }
-
-        // Se muestra el texto
-        Vector3 labelPos = Camera.main.WorldToScreenPoint(this.transform.position);
-        mLabel.transform.position = labelPos;
+		mFSM.Update();
     }
 
 }

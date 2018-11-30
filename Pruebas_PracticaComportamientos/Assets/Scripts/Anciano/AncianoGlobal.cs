@@ -23,8 +23,14 @@ public class AncianoGlobal : GenericState {
 
     override public void Execute(Personaje personaje)
     {
-        if (((Anciano)personaje).TieneCaca())
-            personaje.GetFSM().ChangeState(Excretar.GetInstance());
+		Anciano a = (Anciano)personaje;
+        if (a.TienePis())
+		{
+			a.EfectosDelWC();
+			personaje.mLabel.text = "Me cagao encima";
+			personaje.Mancha();
+            //personaje.GetFSM().ChangeState(Excretar.GetInstance());
+		}
     }
     override public void Exit(Personaje personaje)
     {

@@ -20,7 +20,7 @@ public class Excretar : GenericState
     #endregion
     override public void Enter(Personaje personaje)
     {
-        personaje.mLabel.text = "Ya no hacen pañales como los de antes";
+        personaje.println("Ya no hacen pañales como los de antes");
         personaje.Stop();
     }
 
@@ -29,6 +29,7 @@ public class Excretar : GenericState
         ((Anciano)personaje).Mancha();
         personaje.GetFSM().RevertToPreviousState();
     }
+	
     override public void Exit(Personaje personaje)
     {
     }

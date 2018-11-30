@@ -5,74 +5,41 @@ using UnityEngine.AI;
 
 public class Anciano : Personaje {
 
-    private int mCaca;
-    private int LIMITE_CACA = 2;
-
-    private GameObject mCollSeat1;
-    private GameObject mCollSeat2;
-
-    public GameObject manchaCaca;
-
-    private ArrayList seats;
+	private bool sit;
 
     override protected void Start()
     {
-		
+		// Variables del padre
         base.Start();
 		
-        // Variables del padre
-        mLastTimeUpdated = 0.0f;
-        mIntervalToUpdate = 2.0f;
         agent = GetComponent<NavMeshAgent>();
-        ChangeLocation(Sala.Location.Casa);
+        ChangeLocation(Sala.Location.Entrada);
 
-        // Variables propias
-        mCaca = 0;
-        mCollSeat1 = GameObject.Find("Seat1");
-        mCollSeat2 = GameObject.Find("Seat2");
-        seats = new ArrayList();
-        seats.Add(mCollSeat1);
-        seats.Add(mCollSeat2);
-
+		mVejiga = 0;
+		ALERTA_VEJIGA = 5;
+		
         mFSM = new FSM(this);
         mFSM.SetCurrentState(Deambular.GetInstance());
         mFSM.SetPreviousState(Deambular.GetInstance());
         mFSM.SetGlobalState(AncianoGlobal.GetInstance());
         mFSM.GetCurrentState().Enter(this);
+        
+		// Variables propias
+		sit = false;
     }
 
     override public void UpdatePersonaje()
     {
-
-        // No se actualiza de manera constante
-        if (Sala.timer - mLastTimeUpdated > mIntervalToUpdate)
-        {
-            mLastTimeUpdated = Sala.timer;
-            mFSM.Update();
-            mCaca += 1;
-        }
-
-        // Se muestra el texto
-        Vector3 labelPos = Camera.main.WorldToScreenPoint(this.transform.position);
-        mLabel.transform.position = labelPos;
+		mFSM.Update();
+		mVejiga += 1;
+        
     }
 
 
     // Métodos
-    
-    public int GetCaca() { return mCaca; }
-    
-    public bool TieneCaca() { return mCaca >= LIMITE_CACA; }
-
-    public void Mancha()
-    {
-        GameObject mancha = Instantiate(manchaCaca, new Vector3(transform.position.x, transform.position.y - GetComponent<Renderer>().bounds.size.y / 2, transform.position.z), Quaternion.identity);
-        mCaca = 0;
-        Roomba roomba = (Roomba) controller.GetPersonajesByType<Roomba>()[0];
-        roomba.AddMancha(mancha);
-        if (roomba.GetFSM().GetCurrentState() == IdleRoomba.GetInstance())
-            roomba.GetFSM().ChangeState(BuscarMancha.GetInstance());
-    }
-
-    public ArrayList GetSeats() { return seats; }
+	
+	public void EfectosDelWC(){ this.mVejiga-=5;}
+	
+	public bool IsSit(){ return sit;}
+	public void SetSit(bool s){ sit = s;}
 }

@@ -6,19 +6,45 @@ public class Controller : MonoBehaviour {
 
 	public List<Personaje> personajes;
 	
+	// Última vez que se actualizó el estado
+	float mLastTimeUpdated = 0.0f;
+	
+	// Tiempo que puede pasar entre actualizaciones del estado
+    float mIntervalToUpdate = 2.0f;
+	
+	
+	
 	void Start () {
 		Sala.timer = 0.0f;
+		Sala.SetList();
 	}
 	
 	void Update () {
 		Sala.timer += Time.deltaTime;
 		//float seconds = Sala.timer % 60;
 		
-		int size = personajes.Count;
-		for(int i=0; i<size; i++){
-			personajes[i].UpdatePersonaje();
+		// Actualizar FSM
+		int size;
+		if (Sala.timer - mLastTimeUpdated > mIntervalToUpdate)
+		{
+			mLastTimeUpdated = Sala.timer;
+			size = personajes.Count;
+			for(int i=0; i<size; i++)
+			{
+				personajes[i].UpdatePersonaje();
+			}
+		}
+		
+		// Actualizar textos
+		size = personajes.Count;
+		for(int i=0; i<size; i++)
+		{
+			personajes[i].UpdateTextoPersonaje();
 		}
 	}
+	
+	
+	// Métodos
 
     public List<Personaje> GetPersonajesByType<T>()
     {

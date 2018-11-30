@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class AtenderPerro : GenericState {
 
-    private Perro perro;
-
     #region SINGLETON
     private static AtenderPerro INSTANCE;
 
@@ -21,13 +19,18 @@ public class AtenderPerro : GenericState {
 
     override public void Enter(Personaje personaje)
     {
-        personaje.mLabel.text = "Perritooo";
-        perro = (Perro) personaje.GetController().GetPersonajesByType<Perro>()[0];
+        personaje.println("Perritooo");
+		
+		Adulto a = (Adulto) personaje;
+		Perro perro = (Perro) personaje.GetController().GetPersonajesByType<Perro>()[0];
+		a.SetPerroAtencion(perro);
         personaje.GoTo(perro.transform.position);
     }
 
     override public void Execute(Personaje personaje)
     {
+		Adulto a = (Adulto) personaje;
+		Perro perro = a.GetPerroAtencion();
         if (perro.GetLocation() == personaje.GetLocation())
         {
             if(perro.GetFSM().GetCurrentState() == Ladrar.GetInstance())
@@ -35,6 +38,7 @@ public class AtenderPerro : GenericState {
             personaje.GetFSM().ChangeState(EstarEnCasa.GetInstance());
         }
     }
+	
     override public void Exit(Personaje personaje)
     {
     }

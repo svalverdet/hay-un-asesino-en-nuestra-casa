@@ -295,6 +295,10 @@
     <Compile Include="Assets\Scripts\Anciano\Deambular.cs" />
     <Compile Include="Assets\Scripts\Anciano\Excretar.cs" />
     <Compile Include="Assets\Scripts\Anciano\Sentarse.cs" />
+    <Compile Include="Assets\Scripts\Asesino\Asesino.cs" />
+    <Compile Include="Assets\Scripts\Asesino\BuscarVictima.cs" />
+    <Compile Include="Assets\Scripts\Asesino\EstarEnElWCAsesino.cs" />
+    <Compile Include="Assets\Scripts\Asesino\GlobalStateAsesino.cs" />
     <Compile Include="Assets\Scripts\CameraDrag.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
     <Compile Include="Assets\Scripts\FSM.cs" />
@@ -313,6 +317,8 @@
     <Compile Include="Assets\Scripts\Roomba\IdleRoomba.cs" />
     <Compile Include="Assets\Scripts\Roomba\Roomba.cs" />
     <Compile Include="Assets\Scripts\Sala.cs" />
+    <Compile Include="Assets\Scripts\SmartObjects\GenericSmartObject.cs" />
+    <Compile Include="Assets\Scripts\SmartObjects\Silla.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
