@@ -17,15 +17,13 @@ public class EcharBronca : GenericState {
 	{
 		Adulto a = (Adulto) personaje;
 		List<Personaje> ninos = personaje.GetController().GetPersonajesByType<Nino>();
-		if(ninos.Count > 0){
+		if(ninos.Count > 0 && ((Nino)ninos[0]).GetAdultoBronca()==null){
 			Nino n = (Nino) ninos[0];
-			a.SetNinoBronca(n);
-			
-			personaje.println(n.GetName()+ " ven aquí YA");
-			if(!personaje.IsAgentStopped()) personaje.Stop();
-			
 			n.SetAdultoBronca(a);
 			n.GetFSM().ChangeState(RecibirBronca.GetInstance());
+			
+			a.SetNinoBronca(n);
+			personaje.println(n.GetName()+ " ven aquí YA");
 		}else{
 			personaje.println("Arghh, no puedo echar bronca");
 			personaje.GetFSM().ChangeState(personaje.GetFSM().GetPreviousState());
@@ -54,16 +52,9 @@ public class EcharBronca : GenericState {
 			
 			// Si ya ha tenido suficiente, cambia de estado y deja ir al niño
 			a.EfectosDeLaBronca();
-			if(a.GetAburrimiento()<0){
+			if(a.GetAburrimiento()<0)
+			{
 				personaje.GetFSM().ChangeState(personaje.GetFSM().GetPreviousState());
-				
-				int rnd = personaje.GetRandom(1,6);
-				if(rnd<3)
-					personaje.println("Qué poco nos respetan los niños...");
-				else if(rnd>=3)
-					personaje.println("En mis tiempos con una buena hostia se le quitaba la tontería.");
-				
-				n.GetFSM().ChangeState(n.GetFSM().GetPreviousState());
 			}
 		}else{
 			personaje.mLabel.text = "NIÑOOOOOOOO!!!!";
@@ -71,6 +62,20 @@ public class EcharBronca : GenericState {
 		
 	}
 	override public void Exit(Personaje personaje){
+		Adulto a = (Adulto) personaje;
+		Nino n = a.GetNinoBronca();
+		
+		if(n!= null)
+		{
+			int rnd = personaje.GetRandom(1,6);
+			if(rnd<3)
+				personaje.println("Qué poco nos respetan los niños...");
+			else if(rnd>=3)
+				personaje.println("En mis tiempos con una buena hostia se le quitaba la tontería.");
+			
+			n.GetFSM().ChangeState(n.GetFSM().GetPreviousState());
+			a.SetNinoBronca(null);
+		}
 		
 	}
 }

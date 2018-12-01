@@ -27,6 +27,11 @@ public class Adulto : Personaje {
 		mFSM.SetGlobalState(GlobalStateAdulto.GetInstance());
 		mFSM.GetCurrentState().Enter(this);
 		
+		List<Personaje> asesinos = GetController().GetPersonajesByType<Asesino>();
+		List<Personaje> ninos = GetController().GetPersonajesByType<Nino>();
+		mPersonajesDeInteres.AddRange(asesinos);
+		mPersonajesDeInteres.AddRange(ninos);
+		
 		// Variables propias
 		// ...
 	}
@@ -37,6 +42,13 @@ public class Adulto : Personaje {
 		IncrementarVejiga();
 	}
 	
+	override public void UpdatePercepcion()
+	{
+        base.UpdatePercepcion();
+		
+		//if(personajeVisto instanceof Asesino)
+			// Do sth
+	}
 	
 	// Métodos
 	

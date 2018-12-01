@@ -11,6 +11,14 @@ public abstract class Personaje: MonoBehaviour{
 	public Text mLabel;
 	public GameObject manchaCaca;
 	
+	//Percepción
+	protected List<Personaje> mPersonajesDeInteres = new List<Personaje>();
+	protected float mRadioVision = 10.0f;
+	protected float mRadioOido = 14.0f;
+	protected float mHalfAngleVision = 60.0f;
+	protected Personaje personajeVisto;
+	protected Personaje personajeOido;
+	
     //Controller
     protected Controller controller;
 
@@ -46,6 +54,111 @@ public abstract class Personaje: MonoBehaviour{
 	{
 		Vector3 labelPos = Camera.main.WorldToScreenPoint(this.transform.position);
         mLabel.transform.position = labelPos;
+	}
+	
+	// LLamar a base.UpdatePercepcion() desde los hijos (igual que en Start());
+	public virtual void UpdatePercepcion()
+	{
+		// Vista
+		personajeVisto = comprobarPercepcionVista();
+		
+		//Oído
+		personajeOido = comprobarPercepcionOido();
+		
+		//Personaje personajePercibidoVista = comprobarPercepcionVista();
+		/*if(personajePercibidoVista != null && personajePercibidoVista != personajeVisto)
+		{
+			personajeVisto = personajePercibidoVista;
+			println("VEO A "+personajeVisto.mName);
+		}else if(personajePercibidoVista == null && personajeVisto != null){
+			personajeVisto = null;
+			println("No veo a nadie");
+		}*/
+		
+		//Personaje personajePercibidoOido = comprobarPercepcionOido();
+		
+		/*if(personajePercibidoOido != null && personajePercibidoOido != personajeOido)
+		{
+			personajeOido = personajePercibidoOido;
+			println("OIGO A "+personajeOido.mName);
+		}else if(personajePercibidoOido == null && personajeOido != null){
+			personajeOido = null;
+			println("No oigo a nadie");
+		}
+		*/
+	}
+	
+	protected Personaje comprobarPercepcionVista()
+	{
+		int size = mPersonajesDeInteres.Count;
+		for(int i=0; i<size; i++)
+		{
+			Vector3 distance = mPersonajesDeInteres[i].transform.position - this.transform.position;
+			Vector3 normDistance = Vector3.Normalize(distance);
+			float angleInBetween = Math.Abs(Vector3.Angle(transform.forward, normDistance));
+			
+			if(distance.sqrMagnitude < mRadioVision*mRadioVision 
+			&& angleInBetween < mHalfAngleVision)
+			{
+				// Si choca con una pared, no ve
+				RaycastHit info;
+				if (Physics.Raycast(transform.position, normDistance, out info, mRadioVision)
+					&& !info.transform.tag.Equals("Pared")) 
+				{
+					return mPersonajesDeInteres[i];
+				}
+				else if(info.transform.tag.Equals("Pared")){
+					Debug.Log("NNNNNNNNNNNNo veo con la pared");
+				}
+				
+			}
+		}
+		return null;
+	}
+	
+	protected Personaje comprobarPercepcionOido()
+	{
+		int size = mPersonajesDeInteres.Count;
+		for(int i=0; i<size; i++)
+		{
+			Vector3 distance = mPersonajesDeInteres[i].transform.position - this.transform.position;
+			Vector3 normDistance = Vector3.Normalize(distance);
+			
+			if(distance.sqrMagnitude < mRadioOido*mRadioOido)
+			{
+				// Si choca con una pared, no oye
+				RaycastHit info;
+				if (Physics.Raycast(transform.position, normDistance, out info, mRadioOido)
+					&& !info.transform.tag.Equals("Pared")) 
+				{
+					return mPersonajesDeInteres[i];
+				}
+				else if(info.transform.tag.Equals("Pared")){
+					Debug.Log("NNNNNNNNNNNNo oigo con la pared");
+				}
+				
+			}
+		}
+		return null;
+	}
+	
+	void OnDrawGizmosSelected()
+	{
+		// Oído
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawWireSphere(this.transform.position, mRadioOido);
+		
+		// Vista
+		Gizmos.color = Color.red;
+		
+		Vector3 left = Quaternion.AngleAxis(mHalfAngleVision, transform.up) * transform.forward;
+		Vector3 right = Quaternion.AngleAxis(-mHalfAngleVision, transform.up) * transform.forward;
+		
+		Vector3 forwardLeft = this.transform.position + left * mRadioVision;
+		Vector3 forwardRight = this.transform.position + right * mRadioVision;
+		
+		Gizmos.DrawLine(this.transform.position, forwardLeft);
+		Gizmos.DrawLine(this.transform.position, forwardRight);
 	}
 	
     public Controller GetController() { return controller; }

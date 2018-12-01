@@ -11,6 +11,7 @@ TagManager:
   - Cocina
   - Entrada
   - WC2
+  - Pared
   layers:
   - Default
   - TransparentFX

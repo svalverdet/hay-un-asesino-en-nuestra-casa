@@ -34,6 +34,9 @@ public class RecibirBronca : GenericState{
 		}
 	}
 	override public void Exit(Personaje personaje){
+		Nino n = (Nino)personaje;
 		personaje.println("que pesao el papa con la peta");
+		n.SetAdultoBronca(null);
+		
 	}
 }
