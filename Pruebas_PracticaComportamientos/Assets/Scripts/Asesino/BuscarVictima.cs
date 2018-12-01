@@ -23,9 +23,6 @@ public class BuscarVictima : GenericState {
 	
 	override public void Execute(Personaje personaje){
 		
-		// Comprobar personajes en su misma sala
-		// ...
-		
 		if (personaje.PathComplete())
         {
             personaje.GoTo(Sala.GetRandomRoomPositionExcept(personaje.GetLocation()));

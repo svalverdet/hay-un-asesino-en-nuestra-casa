@@ -16,9 +16,9 @@ public class Nino : Personaje {
 		agent = GetComponent<NavMeshAgent>();
 		ChangeLocation(Sala.Location.HabitacionNino);
 		
-		mVejiga = 2;
-		ALERTA_VEJIGA = 14;
-		MAX_LIMITE_VEJIGA = 20;
+		mVejiga = 0;
+		ALERTA_VEJIGA = 100;
+		MAX_LIMITE_VEJIGA = 250;
 		
 		mFSM = new FSM(this);
 		mFSM.SetCurrentState(Jugando.GetInstance());
@@ -34,13 +34,15 @@ public class Nino : Personaje {
 	override public void UpdatePersonaje()
 	{
 		mFSM.Update();
-		mVejiga+=2;
+		IncrementarVejiga();
 	}
 	
 	
 	// Métodos
 	
 	public void EfectosDelWC(){ this.mVejiga-=5;}
+	
+	public void IncrementarVejiga(){ mVejiga+=1;}
 	
 	public Adulto GetAdultoBronca(){ return this.mAdultoBronca;}
 	public void SetAdultoBronca(Adulto a){ this.mAdultoBronca = a;}

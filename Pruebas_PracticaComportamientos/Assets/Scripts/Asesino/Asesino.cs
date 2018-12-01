@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 public class Asesino : Personaje {
 	
-	private Personaje victima;
+	private Personaje mVictima;
+	private bool mTieneVictima = false;
 
     override protected void Start()
 	{
@@ -13,16 +14,23 @@ public class Asesino : Personaje {
         base.Start();
 		
 		agent = GetComponent<NavMeshAgent>();
-		ChangeLocation(Sala.Location.Entrada);
+		ChangeLocation(Sala.Location.Bar);
 		
 		mVejiga = 0;
-		ALERTA_VEJIGA = 20;
+		ALERTA_VEJIGA = 400;
 		
 		mFSM = new FSM(this);
 		mFSM.SetCurrentState(BuscarVictima.GetInstance());
 		mFSM.SetPreviousState(BuscarVictima.GetInstance());
 		mFSM.SetGlobalState(GlobalStateAsesino.GetInstance());
 		mFSM.GetCurrentState().Enter(this);
+		
+		List<Personaje> ancianos = GetController().GetPersonajesByType<Anciano>();
+		List<Personaje> ninos = GetController().GetPersonajesByType<Nino>();
+		List<Personaje> adultos = GetController().GetPersonajesByType<Adulto>();
+		mPersonajesDeInteres.AddRange(ancianos);
+		mPersonajesDeInteres.AddRange(ninos);
+		mPersonajesDeInteres.AddRange(adultos);
 		
 		// Variables propias
 		// ...
@@ -34,6 +42,15 @@ public class Asesino : Personaje {
 		IncrementarVejiga();
 	}
 	
+	override public void UpdatePercepcion()
+	{
+        base.UpdatePercepcion();
+		
+		if(!mTieneVictima && personajeVisto != null){
+			mTieneVictima = true;
+			mVictima = personajeVisto;
+		}
+	}
 	
 	// Métodos
 	
@@ -41,7 +58,9 @@ public class Asesino : Personaje {
 	
 	public void EfectosDelWC(){mVejiga -= 5;}
 	
-	public Personaje GetVictima(){return victima;}
-	public void SetVictima(Personaje p){ victima = p;}
+	public Personaje GetVictima(){return mVictima;}
+	public void SetVictima(Personaje p){ mVictima = p;}
+	public bool TieneVictima(){ return mTieneVictima;}
+	public void TieneVictima(bool v){ mTieneVictima = v;}
 	
 }

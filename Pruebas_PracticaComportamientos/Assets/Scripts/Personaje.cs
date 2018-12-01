@@ -107,9 +107,6 @@ public abstract class Personaje: MonoBehaviour{
 				{
 					return mPersonajesDeInteres[i];
 				}
-				else if(info.transform.tag.Equals("Pared")){
-					Debug.Log("NNNNNNNNNNNNo veo con la pared");
-				}
 				
 			}
 		}
@@ -132,9 +129,6 @@ public abstract class Personaje: MonoBehaviour{
 					&& !info.transform.tag.Equals("Pared")) 
 				{
 					return mPersonajesDeInteres[i];
-				}
-				else if(info.transform.tag.Equals("Pared")){
-					Debug.Log("NNNNNNNNNNNNo oigo con la pared");
 				}
 				
 			}
@@ -164,6 +158,7 @@ public abstract class Personaje: MonoBehaviour{
     public Controller GetController() { return controller; }
 	public FSM GetFSM(){ return mFSM;}
 	public string GetName(){return this.mName;}
+	public List<Personaje> GetPersonajesDeInteres(){ return mPersonajesDeInteres;}
 	public void println(string msg)
 	{ 
 		Debug.Log(this.mName+": "+msg);
@@ -255,6 +250,7 @@ public abstract class Personaje: MonoBehaviour{
         int n = rnd.Next(min,max);
         return n;
 	}
+	
 	
 	
 	// Getters y setters de las motivaciones

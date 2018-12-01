@@ -7,12 +7,12 @@ public class Controller : MonoBehaviour {
 	public List<Personaje> personajes;
 	
 	// Última vez que se actualizó el estado
-	float mLastTimeUpdatedFSM = 0.0f;
-	float mLastTimeUpdatedPercepcion = 0.0f;
+	float mLastTimeUpdated = 0.0f;
 	
 	// Tiempo que puede pasar entre actualizaciones del estado
-    float mIntervalToUpdateFSM = 2.0f;
-	float mIntervalToUpdatePercepcion = 0.5f;
+	float mIntervalToUpdate = 0.25f;
+	
+	int size;
 	
 	void Start () {
 		Sala.timer = 0.0f;
@@ -23,37 +23,26 @@ public class Controller : MonoBehaviour {
 		Sala.timer += Time.deltaTime;
 		//float seconds = Sala.timer % 60;
 		
-		int size;
-		size = personajes.Count;
 		
+		
+		size = personajes.Count;
+			
 		// Actualizar textos
 		for(int i=0; i<size; i++)
 		{
 			personajes[i].UpdateTextoPersonaje();
 		}
 		
-		// Actualizar percepciones
-		if (Sala.timer - mLastTimeUpdatedPercepcion > mIntervalToUpdatePercepcion)
+		// Actualizar FSM y percepciones
+		if (Sala.timer - mLastTimeUpdated > mIntervalToUpdate)
 		{
-			mLastTimeUpdatedPercepcion = Sala.timer;
+			mLastTimeUpdated = Sala.timer;
 			for(int i=0; i<size; i++)
 			{
 				personajes[i].UpdatePercepcion();
-			}
-		}
-		
-		// Actualizar FSM
-		if (Sala.timer - mLastTimeUpdatedFSM > mIntervalToUpdateFSM)
-		{
-			mLastTimeUpdatedFSM = Sala.timer;
-			for(int i=0; i<size; i++)
-			{
 				personajes[i].UpdatePersonaje();
 			}
 		}
-		
-		
-		
 	}
 	
 	
@@ -68,4 +57,15 @@ public class Controller : MonoBehaviour {
         }
         return aux;
     }
+	
+	public void PersonajeMuerto(Personaje p)
+	{
+		personajes.Remove(p);
+		int size = personajes.Count;
+		for(int i=0; i<size; i++)
+		{
+			personajes[i].GetPersonajesDeInteres().Remove(p);
+		}
+		GameObject.Destroy(p);
+	}
 }

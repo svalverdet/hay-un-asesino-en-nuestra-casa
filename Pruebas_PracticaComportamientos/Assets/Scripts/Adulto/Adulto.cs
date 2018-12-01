@@ -16,10 +16,10 @@ public class Adulto : Personaje {
 		agent = GetComponent<NavMeshAgent>();
 		ChangeLocation(Sala.Location.Salon);
 		
-		mVejiga = 2;
-		mAburrimiento = 5;
-		ALERTA_ABURRIMIENTO = 15;
-		ALERTA_VEJIGA = 18;
+		mVejiga = 0;
+		mAburrimiento = 0;
+		ALERTA_ABURRIMIENTO = 100;
+		ALERTA_VEJIGA = 150;
 		
 		mFSM = new FSM(this);
 		mFSM.SetCurrentState(EstarEnCasa.GetInstance());
@@ -46,8 +46,6 @@ public class Adulto : Personaje {
 	{
         base.UpdatePercepcion();
 		
-		//if(personajeVisto instanceof Asesino)
-			// Do sth
 	}
 	
 	// Métodos
