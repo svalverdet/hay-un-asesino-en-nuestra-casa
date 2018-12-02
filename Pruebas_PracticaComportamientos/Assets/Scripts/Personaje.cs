@@ -10,7 +10,9 @@ public abstract class Personaje: MonoBehaviour{
 	public string mName;
 	public Text mLabel;
 	public GameObject manchaCaca;
-	
+
+    protected int mHealth = 10;
+
 	//Percepción
 	protected List<Personaje> mPersonajesDeInteres = new List<Personaje>();
 	protected float mRadioVision = 10.0f;
@@ -256,6 +258,9 @@ public abstract class Personaje: MonoBehaviour{
 	// Getters y setters de las motivaciones
 	public int GetVejiga(){ return mVejiga;}
 	public int GetAburrimiento(){ return mAburrimiento;}
+    public int GetHealth() { return mHealth; }
+    public void Damaged() { mHealth--; }
+
 	public void VaciarVejiga(){ mVejiga = 0;}
 	
 	public bool TienePis(){ return mVejiga >= ALERTA_VEJIGA;}

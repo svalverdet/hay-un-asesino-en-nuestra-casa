@@ -31,13 +31,21 @@ public class PerseguirVictima : GenericState {
 		
 		if(distancia.sqrMagnitude < 9)
 		{
-			// Si no es un adulto, me lo cargo
-			if (victima.GetComponent<Adulto>() == null)
-			{
-				victima.GetFSM().ChangeState(Morir.GetInstance());
-				a.TieneVictima(false);
-				a.GetFSM().ChangeState(BuscarVictima.GetInstance());
-			}
+            // Si no es un adulto, me lo cargo
+            /*if (victima.GetComponent<Adulto>() == null)
+			{*/
+            if (victima.GetHealth() <= 0)
+            {
+                victima.GetFSM().ChangeState(Morir.GetInstance());
+                a.TieneVictima(false);
+                a.GetFSM().ChangeState(BuscarVictima.GetInstance());
+            }
+            else
+            {
+                if (victima.GetComponent<Nino>() != null) ((Nino)victima).SetAsesino(a);
+                victima.Damaged();
+            }
+			//}
 		}
 	}
 	override public void Exit(Personaje personaje){

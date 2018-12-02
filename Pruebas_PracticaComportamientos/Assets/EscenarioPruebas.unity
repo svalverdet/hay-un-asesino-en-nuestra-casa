@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1616,7 +1616,7 @@ Prefab:
     - target: {fileID: 195411254309070346, guid: 2bad6f6ff9855a34f8a14124896cb573,
         type: 2}
       propertyPath: m_StoppingDistance
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114908608254182414, guid: 2bad6f6ff9855a34f8a14124896cb573,
         type: 2}
@@ -1633,6 +1633,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 21ca67144027a9741b1c7cffa5fbdc42, type: 2}
+    - target: {fileID: 1495558555170206, guid: 2bad6f6ff9855a34f8a14124896cb573, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114908608254182414, guid: 2bad6f6ff9855a34f8a14124896cb573, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 2bad6f6ff9855a34f8a14124896cb573, type: 2}
@@ -1653,9 +1657,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d99abfd1a772a4ca74aa07d5563f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mName: El pillin
+  mName: ACZINO
   mLabel: {fileID: 3467187}
-  manchaCaca: {fileID: 1853001147002328, guid: aaae75c340e109649be76adfaf6d8889, type: 2}
+  manchaCaca: {fileID: 0}
 --- !u!1001 &1063951890
 Prefab:
   m_ObjectHideFlags: 0
@@ -2518,12 +2522,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   personajes:
-  - {fileID: 485834693}
-  - {fileID: 569280305}
-  - {fileID: 315461362}
   - {fileID: 1935181109}
+  - {fileID: 315461362}
+  - {fileID: 485834693}
   - {fileID: 423524356}
-  - {fileID: 891211118}
+  - {fileID: 569280305}
 --- !u!4 &1934495419
 Transform:
   m_ObjectHideFlags: 0

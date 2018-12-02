@@ -16,7 +16,7 @@ public class Anciano : Personaje {
         ChangeLocation(Sala.Location.Entrada);
 
 		mVejiga = 0;
-		ALERTA_VEJIGA = 200;
+		ALERTA_VEJIGA = 50;
 		
         mFSM = new FSM(this);
         mFSM.SetCurrentState(Deambular.GetInstance());
@@ -38,7 +38,7 @@ public class Anciano : Personaje {
 
     // Métodos
 	
-	public void EfectosDelWC(){ this.mVejiga-=5;}
+	public void EfectosDelWC(){ this.mVejiga = 0;}
 	public void IncrementarVejiga(){ mVejiga+=1;}
 	
 	public bool IsSit(){ return sit;}

@@ -17,13 +17,14 @@ public class EcharBronca : GenericState {
 	{
 		Adulto a = (Adulto) personaje;
 		List<Personaje> ninos = personaje.GetController().GetPersonajesByType<Nino>();
-		if(ninos.Count > 0 && ((Nino)ninos[0]).GetAdultoBronca()==null){
-			Nino n = (Nino) ninos[0];
-			n.SetAdultoBronca(a);
-			n.GetFSM().ChangeState(RecibirBronca.GetInstance());
-			
-			a.SetNinoBronca(n);
-			personaje.println(n.GetName()+ " ven aquí YA");
+        if (ninos.Count > 0 && ((Nino)ninos[0]).GetAdultoBronca() == null
+            && ((Nino)ninos[0]).GetFSM().GetCurrentState() != Huir.GetInstance()) {
+            Nino n = (Nino)ninos[0];
+            n.SetAdultoBronca(a);
+            n.GetFSM().ChangeState(RecibirBronca.GetInstance());
+
+            a.SetNinoBronca(n);
+            personaje.println(n.GetName() + " ven aquí YA");
 		}else{
 			personaje.println("Arghh, no puedo echar bronca");
 			personaje.GetFSM().ChangeState(personaje.GetFSM().GetPreviousState());
