@@ -34,8 +34,8 @@ public class NinoGlobalState : GenericState {
 		else if(a.TieneVejigaAlLimite())
 		{
 			a.EfectosDelWC();
-			personaje.mLabel.text = "Me cagao encima";
-			personaje.Mancha();
+			personaje.println("Me cagao encima");
+			personaje.Mancha(0);
 		}	
 	}
 	override public void Exit(Personaje personaje){

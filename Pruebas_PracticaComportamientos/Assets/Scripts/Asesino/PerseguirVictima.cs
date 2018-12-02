@@ -24,9 +24,11 @@ public class PerseguirVictima : GenericState {
 	}
 	
 	override public void Execute(Personaje personaje){
-		
-		Asesino a = (Asesino) personaje;
-		Personaje victima = a.GetVictima();
+
+        Asesino a = (Asesino)personaje;
+        Personaje victima = a.GetVictima();
+        a.GoTo(victima.transform.position);
+
 		Vector3 distancia = victima.transform.position - a.transform.position;
 		
 		if(distancia.sqrMagnitude < 9)
@@ -42,7 +44,7 @@ public class PerseguirVictima : GenericState {
             }
             else
             {
-                if (victima.GetComponent<Nino>() != null) ((Nino)victima).SetAsesino(a);
+                victima.SetAsesino(a);
                 victima.Damaged();
             }
 			//}

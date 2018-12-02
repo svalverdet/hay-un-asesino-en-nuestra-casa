@@ -26,7 +26,7 @@ public class Excretar : GenericState
 
     override public void Execute(Personaje personaje)
     {
-        ((Anciano)personaje).Mancha();
+        ((Anciano)personaje).Mancha(0);
         personaje.GetFSM().RevertToPreviousState();
     }
 	

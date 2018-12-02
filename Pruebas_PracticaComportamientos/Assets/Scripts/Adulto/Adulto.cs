@@ -6,7 +6,8 @@ using UnityEngine.AI;
 public class Adulto : Personaje {
 	
 	private Perro perro;
-	private Nino nino;
+	private Nino nino, ninoBronca;
+    private bool veoPerro;
 
     override protected void Start()
 	{
@@ -29,12 +30,13 @@ public class Adulto : Personaje {
 		
 		List<Personaje> asesinos = GetController().GetPersonajesByType<Asesino>();
 		List<Personaje> ninos = GetController().GetPersonajesByType<Nino>();
-		mPersonajesDeInteres.AddRange(asesinos);
+        List<Personaje> perros = GetController().GetPersonajesByType<Perro>();
+        mPersonajesDeInteres.AddRange(asesinos);
 		mPersonajesDeInteres.AddRange(ninos);
-		
-		// Variables propias
-		// ...
-	}
+        mPersonajesDeInteres.AddRange(perros);
+        // Variables propias
+        // ...
+    }
 	
 	override public void UpdatePersonaje()
 	{
@@ -45,8 +47,36 @@ public class Adulto : Personaje {
 	override public void UpdatePercepcion()
 	{
         base.UpdatePercepcion();
-		
-	}
+        if (personajeOido != null 
+            && mFSM.GetCurrentState() == EstarEnCasa.GetInstance())
+            transform.LookAt(new Vector3(personajeOido.transform.position.x, transform.position.y, personajeOido.transform.position.z));
+
+        if (personajeVisto != null) {
+            if (personajeVisto.GetComponent<Asesino>() != null)
+            {
+                asesino = (Asesino)personajeVisto;
+                nino = null;
+                veoPerro = false;
+            }
+            else if (personajeVisto.GetComponent<Nino>() != null)
+            {
+                nino = (Nino)personajeVisto;
+                veoPerro = false;
+            }
+            else if (personajeVisto.GetComponent<Perro>() != null)
+            {
+                nino = null;
+                veoPerro = true;
+            }
+
+        }
+        else
+        {
+            nino = null;
+            veoPerro = false;
+        }
+
+    }
 	
 	// Métodos
 	
@@ -57,9 +87,11 @@ public class Adulto : Personaje {
 	public void EfectosDelWC(){mVejiga -= 4;}
 	public void EfectosDelBar(){ mAburrimiento -= 5; mVejiga += 1;}
 	
-	public Nino GetNinoBronca(){ return nino;}
-	public void SetNinoBronca(Nino n){ nino = n;}
-	public Perro GetPerroAtencion(){return perro;}
-	public void SetPerroAtencion(Perro p){ perro = p;}
+	public Nino GetNinoBronca(){ return ninoBronca; }
+	public void SetNinoBronca(Nino n){ ninoBronca = n; }
+    public bool GetNino() { return nino; }
+    public Perro GetPerroAtencion(){return perro; }
+    public bool GetVeoPerro() { return veoPerro; }
+    public void SetPerroAtencion(Perro p){ perro = p;}
 	
 }

@@ -22,7 +22,7 @@ public class BuscarMancha : GenericState {
     #endregion
     override public void Enter(Personaje personaje)
     {
-        personaje.mLabel.text = "UNA MANCHAAAAA";
+        personaje.println("UNA MANCHAAAAA");
         manchas = ((Roomba)personaje).GetManchas();
         manchaActual = manchas[0];
         personaje.GoTo(manchaActual.transform.position);

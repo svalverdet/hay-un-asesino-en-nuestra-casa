@@ -19,15 +19,12 @@ public class IdlePerro : GenericState {
     #endregion
     override public void Enter(Personaje personaje)
     {
-        personaje.mLabel.text = "Soy un perro";
     }
 
     override public void Execute(Personaje personaje)
     {
-        personaje.mLabel.text = "Me estoy lamiendo mis partes";
-        if(personaje.GetLocation() == Sala.Location.Bar)
-            personaje.GetFSM().ChangeState(Ladrar.GetInstance());
-        else if (Random.value * 100 < 50)
+        personaje.println("Me estoy lamiendo mis partes");
+        if (Random.value * 100 < 10)
             personaje.GetFSM().ChangeState(Paseo.GetInstance());
     }
     override public void Exit(Personaje personaje)

@@ -21,7 +21,7 @@ public class Huir : GenericState {
         Asesino asesino = ((Nino)personaje).GetAsesino();
         Vector3 dist = personaje.transform.position - asesino.transform.position;
         dist = dist.normalized;
-        personaje.GoTo(personaje.transform.position + dist * 3);
+        personaje.GoTo(personaje.transform.position + dist * 5);
         personaje.println("NO ME COGERAS CON VIDAAA");
     }
     override public void Execute(Personaje personaje)

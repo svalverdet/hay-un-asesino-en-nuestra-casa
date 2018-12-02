@@ -236,6 +236,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Adulto\Adulto.cs" />
+    <Compile Include="Assets\Scripts\Adulto\AdultoHuir.cs" />
     <Compile Include="Assets\Scripts\Adulto\AtenderPerro.cs" />
     <Compile Include="Assets\Scripts\Adulto\EcharBronca.cs" />
     <Compile Include="Assets\Scripts\Adulto\EstarEnCasa.cs" />
@@ -243,6 +244,7 @@
     <Compile Include="Assets\Scripts\Adulto\EstarEnElWC.cs" />
     <Compile Include="Assets\Scripts\Adulto\GlobalState.cs" />
     <Compile Include="Assets\Scripts\Adulto\GlobalStateAdulto.cs" />
+    <Compile Include="Assets\Scripts\Adulto\Golpear.cs" />
     <Compile Include="Assets\Scripts\Anciano\Anciano.cs" />
     <Compile Include="Assets\Scripts\Anciano\AncianoGlobal.cs" />
     <Compile Include="Assets\Scripts\Anciano\Deambular.cs" />
@@ -268,6 +270,7 @@
     <Compile Include="Assets\Scripts\Perro\Ladrar.cs" />
     <Compile Include="Assets\Scripts\Perro\Paseo.cs" />
     <Compile Include="Assets\Scripts\Perro\Perro.cs" />
+    <Compile Include="Assets\Scripts\Perro\PerroGlobalState.cs" />
     <Compile Include="Assets\Scripts\Personaje.cs" />
     <Compile Include="Assets\Scripts\Roomba\BuscarMancha.cs" />
     <Compile Include="Assets\Scripts\Roomba\IdleRoomba.cs" />

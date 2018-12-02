@@ -7,7 +7,6 @@ using UnityEngine.AI;
 public class Nino : Personaje {
 
 	private Adulto mAdultoBronca;
-    private Asesino asesino;
 
     override protected  void Start()
 	{
@@ -27,10 +26,10 @@ public class Nino : Personaje {
 		mFSM.SetGlobalState(NinoGlobalState.GetInstance());
 		mFSM.GetCurrentState().Enter(this);
 
-        List<Personaje> asesinos = GetController().GetPersonajesByType<Asesino>();
-        mPersonajesDeInteres.AddRange(asesinos);
         // Variables propias
         // ...
+        List<Personaje> asesinos = GetController().GetPersonajesByType<Asesino>();
+        mPersonajesDeInteres.AddRange(asesinos);
 
     }
 
@@ -43,6 +42,11 @@ public class Nino : Personaje {
     override public void UpdatePercepcion()
     {
         base.UpdatePercepcion();
+
+        if (personajeOido != null
+            && mFSM.GetCurrentState() == Jugando.GetInstance())
+            transform.LookAt(new Vector3(personajeOido.transform.position.x, transform.position.y, personajeOido.transform.position.z));
+
 
         if (personajeVisto != null && personajeVisto.GetComponent<Asesino>() != null)
         {
@@ -57,12 +61,7 @@ public class Nino : Personaje {
 	public void IncrementarVejiga(){ mVejiga+=1; }
 	
 	public Adulto GetAdultoBronca(){ return this.mAdultoBronca; }
-    
-    public Asesino GetAsesino() { return asesino; }
-    public void SetAsesino(Asesino a) { asesino = a; }
 
     public void SetAdultoBronca(Adulto a){ this.mAdultoBronca = a; }
-	
-	
 	
 }

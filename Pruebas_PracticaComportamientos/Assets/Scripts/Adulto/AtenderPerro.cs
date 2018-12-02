@@ -19,7 +19,7 @@ public class AtenderPerro : GenericState {
 
     override public void Enter(Personaje personaje)
     {
-        personaje.println("Perritooo");
+        personaje.println("Que le pasa al chucho ahora");
 		
 		Adulto a = (Adulto) personaje;
 		Perro perro = (Perro) personaje.GetController().GetPersonajesByType<Perro>()[0];
@@ -31,10 +31,14 @@ public class AtenderPerro : GenericState {
     {
 		Adulto a = (Adulto) personaje;
 		Perro perro = a.GetPerroAtencion();
-        if (perro.GetLocation() == personaje.GetLocation())
+        if (a.GetVeoPerro())
         {
-            if(perro.GetFSM().GetCurrentState() == Ladrar.GetInstance())
+            if (perro.GetFSM().GetCurrentState() == Ladrar.GetInstance())
+            {
+                a.println("CALLATE");
                 perro.GetFSM().ChangeState(Paseo.GetInstance());
+                perro.SetAsesino(null);
+            }
             personaje.GetFSM().ChangeState(EstarEnCasa.GetInstance());
         }
     }

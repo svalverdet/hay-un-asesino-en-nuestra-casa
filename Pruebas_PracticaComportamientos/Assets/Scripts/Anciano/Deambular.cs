@@ -20,7 +20,7 @@ public class Deambular : GenericState{
     override public void Enter(Personaje personaje)
     {
         personaje.println("Voy a deambular");
-        personaje.GoTo(Sala.GetRandomRoomPositionExcept(personaje.GetLocation()));
+        personaje.GoTo(Sala.GetRandomRoomPositionExcept(new Sala.Location[] { personaje.GetLocation(), Sala.Location.Bar }));
     }
 
     override public void Execute(Personaje personaje)
@@ -32,16 +32,23 @@ public class Deambular : GenericState{
             {
                 msg = "Me piro de casa";
             }
-            else if (personaje.GetLocation() == Sala.Location.Bar)
+            else if (personaje.GetLocation() == Sala.Location.Entrada)
             {
-                msg = "Ya estoy borracho iuuuupi";
+                msg = "Estoy en la entrada de la casa y la salida de la vida";
             }
-            else if (personaje.GetLocation() == Sala.Location.WC)
+            else if (personaje.GetLocation() == Sala.Location.WC || personaje.GetLocation() == Sala.Location.WC2)
             {
                 msg = "No se para que vengo aquí si tengo pañales";
             }
-			
-            personaje.GoTo(Sala.GetRandomRoomPositionExcept(personaje.GetLocation()));
+            else if (personaje.GetLocation() == Sala.Location.Cocina)
+            {
+                msg = "Voy a pelar unas pipas";
+            }
+            else if (personaje.GetLocation() == Sala.Location.HabitacionNino)
+            {
+                msg = "Ven niño que tengo aqui un caramelo";
+            }
+            personaje.GoTo(Sala.GetRandomRoomPositionExcept(new Sala.Location[] { personaje.GetLocation(), Sala.Location.Bar }));
             personaje.println(msg);
         }
 		

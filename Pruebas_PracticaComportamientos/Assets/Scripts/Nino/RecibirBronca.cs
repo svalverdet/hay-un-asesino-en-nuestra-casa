@@ -25,7 +25,7 @@ public class RecibirBronca : GenericState{
 	}
 	override public void Execute(Personaje personaje){
 		
-		if(personaje.GetLocation() == Sala.Location.Salon)
+		if(((Nino)personaje).GetAdultoBronca().GetNino() == personaje)
 		{
 			int num = personaje.GetRandom(1,6);
 			if(num<3){

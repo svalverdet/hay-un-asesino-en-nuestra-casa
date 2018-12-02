@@ -22,7 +22,7 @@ public class GlobalStateAsesino : GenericState{
 	override public void Execute(Personaje personaje){
 		
 		Asesino a = (Asesino) personaje;
-		if(a.GetVictima()!=null)
+		if(a.GetVictima()!=null && (personaje.GetFSM().GetCurrentState() != PerseguirVictima.GetInstance()))
 		{
 			personaje.GetFSM().ChangeState(PerseguirVictima.GetInstance());
 		}

@@ -8,15 +8,16 @@ using UnityEngine.AI;
 public abstract class Personaje: MonoBehaviour{
 	
 	public string mName;
-	public Text mLabel;
+	protected Text mLabel;
 	public GameObject manchaCaca;
-
-    protected int mHealth = 10;
+    public GameObject manchaSangre;
+    protected Asesino asesino;
+    protected int mHealth = 15;
 
 	//Percepción
 	protected List<Personaje> mPersonajesDeInteres = new List<Personaje>();
 	protected float mRadioVision = 10.0f;
-	protected float mRadioOido = 14.0f;
+	protected float mRadioOido = 5.0f;
 	protected float mHalfAngleVision = 60.0f;
 	protected Personaje personajeVisto;
 	protected Personaje personajeOido;
@@ -40,23 +41,35 @@ public abstract class Personaje: MonoBehaviour{
 	// NavMesh
 	protected Vector3 goal;
 	protected NavMeshAgent agent;
-	
-	
 
-	// Métodos
-	
+    // Última vez que se actualizó el estado
+    float mLastTimeUpdated = 0.0f;
+
+    // Tiempo que puede pasar entre actualizaciones del estado
+    float mIntervalToUpdate = 2.0f;
+
+    // Métodos
+
     protected virtual void Start()
     {
         controller = GameObject.Find("WorldController").GetComponent<Controller>();
+        mLabel = Instantiate(GameObject.Find("TextPrefab").GetComponent<Text>(), transform.position, transform.rotation) as Text;
+        GameObject canvas = GameObject.Find("Canvas");
+        mLabel.transform.SetParent(canvas.transform, false);
     }
 
-	public abstract void UpdatePersonaje();
+    public abstract void UpdatePersonaje();
 	
 	public void UpdateTextoPersonaje()
 	{
 		Vector3 labelPos = Camera.main.WorldToScreenPoint(this.transform.position);
         mLabel.transform.position = labelPos;
-	}
+        if(Sala.timer - mLastTimeUpdated > mIntervalToUpdate)
+        {
+            mLastTimeUpdated = Sala.timer;
+            mLabel.text = "";
+        }
+    }
 	
 	// LLamar a base.UpdatePercepcion() desde los hijos (igual que en Start());
 	public virtual void UpdatePercepcion()
@@ -162,9 +175,11 @@ public abstract class Personaje: MonoBehaviour{
 	public string GetName(){return this.mName;}
 	public List<Personaje> GetPersonajesDeInteres(){ return mPersonajesDeInteres;}
 	public void println(string msg)
-	{ 
-		Debug.Log(this.mName+": "+msg);
-		mLabel.text = msg;
+	{
+        if (mLabel.text.Equals("")) {
+            Debug.Log(this.mName + ": " + msg);
+            mLabel.text = msg;
+        }		
 	}
 	
 		
@@ -172,9 +187,14 @@ public abstract class Personaje: MonoBehaviour{
     public void ChangeLocation(Sala.Location loc){ this.mLocation = loc;}
 	
 	
-	public void Mancha()
+	public void Mancha(int tipo)
     {
-        GameObject mancha = Instantiate(manchaCaca, new Vector3(transform.position.x, transform.position.y - GetComponent<Renderer>().bounds.size.y / 2, transform.position.z), Quaternion.identity);
+        GameObject mancha;
+        if (tipo == 0)
+            mancha = Instantiate(manchaCaca, new Vector3(transform.position.x, transform.position.y - GetComponent<Renderer>().bounds.size.y / 2, transform.position.z), Quaternion.identity);
+        else
+            mancha = Instantiate(manchaSangre, new Vector3(transform.position.x, transform.position.y - GetComponent<Renderer>().bounds.size.y / 2, transform.position.z), Quaternion.identity);
+
         Roomba roomba = (Roomba) controller.GetPersonajesByType<Roomba>()[0];
         roomba.AddMancha(mancha);
         if (roomba.GetFSM().GetCurrentState() == IdleRoomba.GetInstance())
@@ -259,7 +279,10 @@ public abstract class Personaje: MonoBehaviour{
 	public int GetVejiga(){ return mVejiga;}
 	public int GetAburrimiento(){ return mAburrimiento;}
     public int GetHealth() { return mHealth; }
+    public Asesino GetAsesino() { return asesino; }
+    public void SetAsesino(Asesino a) { asesino = a; }
     public void Damaged() { mHealth--; }
+    public void RemoveLabel() { GameObject.Destroy(mLabel); }
 
 	public void VaciarVejiga(){ mVejiga = 0;}
 	
@@ -267,4 +290,9 @@ public abstract class Personaje: MonoBehaviour{
 	public bool TieneVejigaAlLimite(){return mVejiga >= MAX_LIMITE_VEJIGA;}
 	public bool EstaAburrido(){ return mAburrimiento >= ALERTA_ABURRIMIENTO;}
 
+    public void AddInteraccionAsesino()
+    {
+        List<Personaje> asesinos = GetController().GetPersonajesByType<Asesino>();
+        mPersonajesDeInteres.AddRange(asesinos);
+    }
 }

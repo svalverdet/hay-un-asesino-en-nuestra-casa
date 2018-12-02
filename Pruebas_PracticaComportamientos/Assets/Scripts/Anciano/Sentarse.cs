@@ -32,7 +32,7 @@ public class Sentarse : GenericState {
             personaje.println("Me siento");
             a.SetSit(true);
         }
-		else if (a.IsSit() && Random.value * 100 < 70)
+		else if (a.IsSit() && Random.value * 100 < 10)
         {
             personaje.GetFSM().ChangeState(Deambular.GetInstance());
         }

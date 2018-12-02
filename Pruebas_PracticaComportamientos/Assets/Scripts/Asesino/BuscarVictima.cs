@@ -18,14 +18,14 @@ public class BuscarVictima : GenericState {
 	override public void Enter(Personaje personaje)
 	{
 		personaje.println("jijiji");
-		personaje.GoTo(Sala.GetRandomRoomPositionExcept(personaje.GetLocation()));
-	}
+        personaje.GoTo(Sala.GetRandomRoomPositionExcept(new Sala.Location[] { personaje.GetLocation(), Sala.Location.Bar }));
+    }
 	
 	override public void Execute(Personaje personaje){
 		
 		if (personaje.PathComplete())
         {
-            personaje.GoTo(Sala.GetRandomRoomPositionExcept(personaje.GetLocation()));
+            personaje.GoTo(Sala.GetRandomRoomPositionExcept(new Sala.Location[] { personaje.GetLocation(), Sala.Location.Bar }));
         }
 	}
 	override public void Exit(Personaje personaje){

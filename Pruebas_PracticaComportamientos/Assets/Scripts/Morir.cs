@@ -20,10 +20,10 @@ public class Morir : GenericState
     #endregion
     override public void Enter(Personaje personaje)
     {
-        personaje.println("Me mueroooo");
+		personaje.Mancha(1);
+        personaje.RemoveLabel();
         personaje.Stop();
-		personaje.Mancha();
-		personaje.GetController().PersonajeMuerto(personaje);
+        personaje.GetController().PersonajeMuerto(personaje);
     }
 
     override public void Execute(Personaje personaje)

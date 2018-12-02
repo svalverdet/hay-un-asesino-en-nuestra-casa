@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Anciano : Personaje {
 
 	private bool sit;
+    private string[] frasesAsesino;
 
     override protected void Start()
     {
@@ -26,6 +27,19 @@ public class Anciano : Personaje {
         
 		// Variables propias
 		sit = false;
+        List<Personaje> asesinos = GetController().GetPersonajesByType<Asesino>();
+        mPersonajesDeInteres.AddRange(asesinos);
+        frasesAsesino = new string[] { "Me he cagado, pero no ha sido por tu culpa",
+                                        "Por fin alguien que se preocupa por mis sentimientos",
+                                        "Llevo 20 años esperando este momento",
+                                        "Disfruta mientras eres joven, tú que puedes",
+                                        "Yo antes solía ser como tú, ¿sabes?",
+                                        "Estoy calmado",
+                                        "Gracias",
+                                        "No sabes hacerlo mejor?",
+                                        "Venga, no tengo todo el dia",
+                                        "Hacía mucho que no tenía esta sensación"
+                                    };
     }
 
     override public void UpdatePersonaje()
@@ -35,12 +49,23 @@ public class Anciano : Personaje {
         
     }
 
+    override public void UpdatePercepcion()
+    {
+        base.UpdatePercepcion();
+
+        if (personajeVisto != null && personajeVisto.GetComponent<Asesino>() != null)
+        {
+            asesino = (Asesino)personajeVisto;
+        }
+    }
 
     // Métodos
-	
-	public void EfectosDelWC(){ this.mVejiga = 0;}
+
+    public void EfectosDelWC(){ this.mVejiga = 0;}
 	public void IncrementarVejiga(){ mVejiga+=1;}
-	
-	public bool IsSit(){ return sit;}
+
+    public string GetFrase() { return frasesAsesino[Random.Range(0, frasesAsesino.Length - 1)]; }
+
+    public bool IsSit(){ return sit;}
 	public void SetSit(bool s){ sit = s;}
 }

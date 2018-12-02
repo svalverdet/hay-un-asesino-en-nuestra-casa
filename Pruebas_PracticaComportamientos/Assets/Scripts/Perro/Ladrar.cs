@@ -21,15 +21,15 @@ public class Ladrar : GenericState {
     #endregion
     override public void Enter(Personaje personaje)
     {
-		personaje.mLabel.text = "Wof Wof";
+        personaje.println("Wof wof ven adulto");
         adultos = personaje.GetController().GetPersonajesByType<Adulto>();
+        personaje.Stop();
         BroadCast();
     }
 
     override public void Execute(Personaje personaje)
     {
-        if(personaje.mLabel.text.Equals("Ladro")) personaje.mLabel.text = "Guau guau";
-        else personaje.mLabel.text = "Ladro";
+        personaje.println("Wof wof ven adulto");
         BroadCast();
     }
 	

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Controller : MonoBehaviour {
 
 	public List<Personaje> personajes;
-	
+    public Asesino asesino;
 	// Última vez que se actualizó el estado
 	float mLastTimeUpdated = 0.0f;
 	
@@ -22,8 +22,6 @@ public class Controller : MonoBehaviour {
 	void Update () {
 		Sala.timer += Time.deltaTime;
 		//float seconds = Sala.timer % 60;
-		
-		
 		
 		size = personajes.Count;
 			
@@ -68,4 +66,17 @@ public class Controller : MonoBehaviour {
 		}
 		GameObject.Destroy(p);
 	}
+
+    public void GenerarAsesino()
+    {
+        if (GetPersonajesByType<Asesino>().Count == 0)
+        {
+            Asesino a = Instantiate(asesino);
+            personajes.Add(a);
+            foreach (Personaje p in personajes)
+            {
+                if (p.GetComponent<Roomba>() == null) p.AddInteraccionAsesino();
+            }
+        }
+    }
 }

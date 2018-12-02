@@ -73,7 +73,7 @@ public class Sala{
 		return room.transform.position;
 	}
 	
-	public static Vector3 GetRandomRoomPositionExcept(Location room){
+	public static Vector3 GetRandomRoomPositionExcept(Location[] rooms){
 		
 		// Preparar la lista de las posibles localizaciones a las que ir
 		List<Location> avaiableLocations = new List<Location>();
@@ -82,7 +82,10 @@ public class Sala{
 		   avaiableLocations.Add(loc);
 		}
 		avaiableLocations.Remove(Location.None);
-		avaiableLocations.Remove(room);
+        foreach (Location loc in rooms)
+        {
+            avaiableLocations.Remove(loc);
+        }
 		
 		// Tomar una de ellas al azar
 		int index = Mathf.FloorToInt(Random.value * avaiableLocations.Count);

@@ -20,11 +20,12 @@ public class Paseo : GenericState {
     override public void Enter(Personaje personaje)
     {
         personaje.println("A pasear");
-        personaje.GoTo(Sala.GetRandomRoomPositionExcept(personaje.GetLocation()));
+        personaje.GoTo(Sala.GetRandomRoomPositionExcept(new Sala.Location[] { personaje.GetLocation(), Sala.Location.Bar }));
     }
 
     override public void Execute(Personaje personaje)
     {
+        personaje.println("A pasear");
         if (personaje.PathComplete())
         {
             personaje.GetFSM().ChangeState(IdlePerro.GetInstance());

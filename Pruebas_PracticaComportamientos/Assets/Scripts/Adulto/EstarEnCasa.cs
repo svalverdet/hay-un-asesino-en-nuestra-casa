@@ -29,7 +29,7 @@ public class EstarEnCasa : GenericState {
 			a.IncrementarAburrimiento();
 			float rnd = Random.value * 100;
 			if(a.EstaAburrido()){
-				if(rnd<50){
+				if(rnd<100){
 					personaje.GetFSM().ChangeState(EcharBronca.GetInstance());
 				}else{
 					personaje.GetFSM().ChangeState(EstarEnElBar.GetInstance());
