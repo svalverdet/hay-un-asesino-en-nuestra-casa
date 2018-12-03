@@ -1444,8 +1444,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mName: Paquito Jr.
-  mLabel: {fileID: 0}
   manchaCaca: {fileID: 1853001147002328, guid: aaae75c340e109649be76adfaf6d8889, type: 2}
+  manchaSangre: {fileID: 1213563442193528, guid: 7d00192129c830b48bd4296ab9777d14,
+    type: 2}
+  mVejiga: 0
+  mVejigaUrgency:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  mAburrimiento: 0
+  mAburrimientoUrgency:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  mSmartObjectInUse: {fileID: 0}
 --- !u!137 &137067320413561358
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

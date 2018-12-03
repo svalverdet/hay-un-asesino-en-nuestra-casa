@@ -35,6 +35,9 @@ public class Sala{
 		mColliders.Add(mCollBar);
 	}
 
+	
+	
+	
 	public static Vector3 GetRoomPosition(Location roomName){
 		GameObject room;
 		
@@ -92,6 +95,13 @@ public class Sala{
 		
 	}
 	
+	/*
+	public static List<Location> GetAllRoomsByType(Location roomName){
+		foreach(GenericCollider col in mGenericColliders){
+			if(col.locationType)
+		}
+	}
+	*/
 	
 	public static void AddSmartObject(GenericSmartObject gso){
 		mSmartObjects.Add(gso);

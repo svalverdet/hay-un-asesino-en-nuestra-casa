@@ -434,8 +434,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mName: MADRE
-  mLabel: {fileID: 0}
   manchaCaca: {fileID: 1853001147002328, guid: aaae75c340e109649be76adfaf6d8889, type: 2}
+  manchaSangre: {fileID: 1213563442193528, guid: 7d00192129c830b48bd4296ab9777d14,
+    type: 2}
+  mVejiga: 0
+  mVejigaUrgency:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  mAburrimiento: 0
+  mAburrimientoUrgency:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  mSmartObjectInUse: {fileID: 0}
 --- !u!195 &195239735067081576
 NavMeshAgent:
   m_ObjectHideFlags: 1
