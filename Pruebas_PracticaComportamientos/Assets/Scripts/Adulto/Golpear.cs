@@ -31,26 +31,35 @@ public class Golpear : GenericState {
 
         Adulto a = (Adulto)personaje;
         Asesino asesino = a.GetAsesino();
-        a.GoTo(asesino.transform.position);
+		if(asesino != null){
+			a.GoTo(asesino.transform.position);
 
-        a.transform.LookAt(new Vector3(asesino.transform.position.x, a.transform.position.y, asesino.transform.position.z));
-        Vector3 distancia = asesino.transform.position - a.transform.position;
+			a.transform.LookAt(new Vector3(asesino.transform.position.x, a.transform.position.y, asesino.transform.position.z));
+			Vector3 distancia = asesino.transform.position - a.transform.position;
 
-        if (distancia.sqrMagnitude < 5)
-        {
-            if (asesino.GetHealth() <= 0)
-            {
-                asesino.GetFSM().ChangeState(Morir.GetInstance());
-                a.SetAsesino(null);
-                a.GetFSM().ChangeState(EstarEnCasa.GetInstance());
-            }
-            else
-            {
-                asesino.Damaged();
-                asesino.SetVictima(a);
-                asesino.TieneVictima(true);
-            }
-        }
+			if (a.GetHealth() < 10)
+			{
+				personaje.GetFSM().ChangeState(AdultoHuir.GetInstance());
+			}else if (distancia.sqrMagnitude < 5)
+			{
+				if (asesino.GetHealth() <= 0)
+				{
+					asesino.GetFSM().ChangeState(Morir.GetInstance());
+					a.SetAsesino(null);
+					a.GetFSM().ChangeState(EstarEnCasa.GetInstance());
+				}
+				else
+				{
+					asesino.Damaged();
+					asesino.SetVictima(a);
+					asesino.TieneVictima(true);
+				}
+			}
+			
+			
+		}else{
+			a.GetFSM().ChangeState(EstarEnCasa.GetInstance());
+		}
     }
     override public void Exit(Personaje personaje)
     {

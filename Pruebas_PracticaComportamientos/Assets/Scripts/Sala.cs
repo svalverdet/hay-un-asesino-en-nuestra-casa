@@ -21,10 +21,9 @@ public class Sala{
 	public static GameObject mCollHabitacionNino = GameObject.FindWithTag("HabitacionNino");
 	public static GameObject mCollBar = GameObject.FindWithTag("Bar");
 	
-	public static List<GameObject> mSeats = new List<GameObject>();
+	public static List<GenericSmartObject> mSmartObjects = new List<GenericSmartObject>();
+	public static List<GenericCollider> mGenericColliders = new List<GenericCollider>();
 	
-	public static GameObject mCollSeat1 = GameObject.Find("Seat1");
-    public static GameObject mCollSeat2 = GameObject.Find("Seat2");
 	
 	public static void SetList(){
 		mColliders.Add(mCollSalon);
@@ -34,9 +33,6 @@ public class Sala{
 		mColliders.Add(mCollWC2);
 		mColliders.Add(mCollHabitacionNino);
 		mColliders.Add(mCollBar);
-		
-		mSeats.Add(mCollSeat1);
-		mSeats.Add(mCollSeat2);
 	}
 
 	public static Vector3 GetRoomPosition(Location roomName){
@@ -96,20 +92,37 @@ public class Sala{
 		
 	}
 	
-	//Devuelve el asiento más cercano
-    public static Vector3 GetSeatLocation(Personaje personaje){
-        float distance = Mathf.Infinity;
-        float distanceToCharacter = Mathf.Infinity;
-        Vector3 actualPos = new Vector3(0.0f, 0.0f, 0.0f);
-        foreach (GameObject c in mSeats)
-        {
-            distanceToCharacter = (personaje.transform.position - c.transform.position).magnitude;
-            if (distance > distanceToCharacter)
-            {
-                distance = distanceToCharacter;
-                actualPos = c.transform.position;
-            }
-        }
-        return actualPos;
-    }
+	
+	public static void AddSmartObject(GenericSmartObject gso){
+		mSmartObjects.Add(gso);
+	}
+	
+	public static void AddCollider(GenericCollider col){
+		mGenericColliders.Add(col);
+	}
+	
+	public static GenericSmartObject CheckBestSmartObjectForMe(Personaje personaje){
+		float maxHappiness = Mathf.NegativeInfinity;
+		GenericSmartObject obj = null;
+		int size = mSmartObjects.Count;
+		for(int i=0; i<size; i++)
+		{
+			if(mSmartObjects[i].CheckRequirements(personaje)){
+				float objHappiness = mSmartObjects[i].CheckHappiness(personaje);
+				if(objHappiness>maxHappiness)
+				{
+					maxHappiness = objHappiness;
+					obj = mSmartObjects[i];
+				}
+			}
+		}
+		
+		if(obj!=null){
+			obj.inUse = true;
+			obj.vejigaToReach = personaje.GetVejiga()+obj.advertisedVejigaAdjustment;
+			obj.aburrimientoToReach = personaje.GetAburrimiento()+obj.advertisedAburrimientoAdjustment;
+			personaje.SetSmartObjectInUse(obj);
+		}
+		return obj;
+	}
 }

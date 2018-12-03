@@ -18,10 +18,12 @@ public class Anciano : Personaje {
 
 		mVejiga = 0;
 		ALERTA_VEJIGA = 50;
+		ALERTA_ABURRIMIENTO = 50;
 		
+		mEstadoInicial = Deambular.GetInstance();
         mFSM = new FSM(this);
-        mFSM.SetCurrentState(Deambular.GetInstance());
-        mFSM.SetPreviousState(Deambular.GetInstance());
+        mFSM.SetCurrentState(mEstadoInicial);
+        mFSM.SetPreviousState(mEstadoInicial);
         mFSM.SetGlobalState(AncianoGlobal.GetInstance());
         mFSM.GetCurrentState().Enter(this);
         
@@ -38,7 +40,10 @@ public class Anciano : Personaje {
                                         "Gracias",
                                         "No sabes hacerlo mejor?",
                                         "Venga, no tengo todo el dia",
-                                        "Hacía mucho que no tenía esta sensación"
+                                        "Hacía mucho que no tenía esta sensación",
+										"Esto no me lo cubre la seguridad social",
+										"Hasta mañana, si Dios quiere",
+										"Dios me lleve pronto"
                                     };
     }
 
@@ -46,6 +51,7 @@ public class Anciano : Personaje {
     {
 		mFSM.Update();
 		IncrementarVejiga();
+		IncrementarAburrimiento();
         
     }
 
@@ -63,6 +69,7 @@ public class Anciano : Personaje {
 
     public void EfectosDelWC(){ this.mVejiga = 0;}
 	public void IncrementarVejiga(){ mVejiga+=1;}
+	public void IncrementarAburrimiento(){ mAburrimiento+=1;}
 
     public string GetFrase() { return frasesAsesino[Random.Range(0, frasesAsesino.Length - 1)]; }
 

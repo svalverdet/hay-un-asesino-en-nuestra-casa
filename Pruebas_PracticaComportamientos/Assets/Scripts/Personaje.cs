@@ -12,7 +12,6 @@ public abstract class Personaje: MonoBehaviour{
 	public GameObject manchaCaca;
     public GameObject manchaSangre;
     protected Asesino asesino;
-    protected int mHealth = 15;
 
 	//Percepción
 	protected List<Personaje> mPersonajesDeInteres = new List<Personaje>();
@@ -27,13 +26,19 @@ public abstract class Personaje: MonoBehaviour{
 
 	// Instancia de la máquina de estados
 	protected FSM mFSM;
+	protected GenericState mEstadoInicial;
 	
 	// Motivaciones
-	protected int mVejiga;
-	protected int mAburrimiento;
-	protected int ALERTA_ABURRIMIENTO;
-	protected int ALERTA_VEJIGA;
-	protected int MAX_LIMITE_VEJIGA; // Algunos personajes se hacen caca encima cuando lo sobrepasan
+    protected int mHealth = 25;
+	
+	public float mVejiga;
+	public AnimationCurve mVejigaUrgency;
+	public float mAburrimiento;
+	public AnimationCurve mAburrimientoUrgency;
+	protected float ALERTA_ABURRIMIENTO;
+	protected float ALERTA_VEJIGA;
+	protected float MAX_LIMITE_VEJIGA; // Algunos personajes se hacen caca encima cuando lo sobrepasan
+	public GenericSmartObject mSmartObjectInUse;
 	
 	// Localización del personaje
 	protected Sala.Location mLocation;
@@ -80,27 +85,6 @@ public abstract class Personaje: MonoBehaviour{
 		//Oído
 		personajeOido = comprobarPercepcionOido();
 		
-		//Personaje personajePercibidoVista = comprobarPercepcionVista();
-		/*if(personajePercibidoVista != null && personajePercibidoVista != personajeVisto)
-		{
-			personajeVisto = personajePercibidoVista;
-			println("VEO A "+personajeVisto.mName);
-		}else if(personajePercibidoVista == null && personajeVisto != null){
-			personajeVisto = null;
-			println("No veo a nadie");
-		}*/
-		
-		//Personaje personajePercibidoOido = comprobarPercepcionOido();
-		
-		/*if(personajePercibidoOido != null && personajePercibidoOido != personajeOido)
-		{
-			personajeOido = personajePercibidoOido;
-			println("OIGO A "+personajeOido.mName);
-		}else if(personajePercibidoOido == null && personajeOido != null){
-			personajeOido = null;
-			println("No oigo a nadie");
-		}
-		*/
 	}
 	
 	protected Personaje comprobarPercepcionVista()
@@ -174,6 +158,7 @@ public abstract class Personaje: MonoBehaviour{
 	public FSM GetFSM(){ return mFSM;}
 	public string GetName(){return this.mName;}
 	public List<Personaje> GetPersonajesDeInteres(){ return mPersonajesDeInteres;}
+	public GenericState GetEstadoInicial(){ return mEstadoInicial;}
 	public void println(string msg)
 	{
         if (mLabel.text.Equals("")) {
@@ -276,9 +261,9 @@ public abstract class Personaje: MonoBehaviour{
 	
 	
 	// Getters y setters de las motivaciones
-	public int GetVejiga(){ return mVejiga;}
-	public int GetAburrimiento(){ return mAburrimiento;}
-    public int GetHealth() { return mHealth; }
+	public float GetVejiga(){ return mVejiga;}
+	public float GetAburrimiento(){ return mAburrimiento;}
+    public float GetHealth() { return mHealth; }
     public Asesino GetAsesino() { return asesino; }
     public void SetAsesino(Asesino a) { asesino = a; }
     public void Damaged() { mHealth--; }
@@ -290,6 +275,18 @@ public abstract class Personaje: MonoBehaviour{
 	public bool TieneVejigaAlLimite(){return mVejiga >= MAX_LIMITE_VEJIGA;}
 	public bool EstaAburrido(){ return mAburrimiento >= ALERTA_ABURRIMIENTO;}
 
+	public void AddVejiga(float v){ mVejiga += v;}
+	public void AddAburrimiento(float a){ mAburrimiento += a;}
+	
+	public GenericSmartObject GetSmartObjectInUse(){ return mSmartObjectInUse;}
+	public void SetSmartObjectInUse(GenericSmartObject gso){ mSmartObjectInUse = gso;}
+	public float GetUrgency(float vejiga, float aburrimiento)
+	{ 
+		float vejigaUrgency = mVejigaUrgency.Evaluate(Mathf.Clamp(vejiga/100, 0.0f, 1.0f));
+		float aburrimientoUrgency = mAburrimientoUrgency.Evaluate(Mathf.Clamp(aburrimiento/100, 0.0f, 1.0f));
+		return (vejigaUrgency + aburrimientoUrgency)/2;
+	}
+	
     public void AddInteraccionAsesino()
     {
         List<Personaje> asesinos = GetController().GetPersonajesByType<Asesino>();

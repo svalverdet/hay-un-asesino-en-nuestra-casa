@@ -13,9 +13,10 @@ public class Perro : Personaje {
         agent = GetComponent<NavMeshAgent>();
         ChangeLocation(Sala.Location.Entrada);
 
+		mEstadoInicial = IdlePerro.GetInstance();
         mFSM = new FSM(this);
-        mFSM.SetCurrentState(IdlePerro.GetInstance());
-        mFSM.SetPreviousState(IdlePerro.GetInstance());
+        mFSM.SetCurrentState(mEstadoInicial);
+        mFSM.SetPreviousState(mEstadoInicial);
         mFSM.SetGlobalState(PerroGlobalState.GetInstance());
         mFSM.GetCurrentState().Enter(this);
 

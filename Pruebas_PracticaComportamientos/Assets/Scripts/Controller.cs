@@ -22,11 +22,9 @@ public class Controller : MonoBehaviour {
 	void Update () {
 		Sala.timer += Time.deltaTime;
 		//float seconds = Sala.timer % 60;
-		
-		size = personajes.Count;
 			
 		// Actualizar textos
-		for(int i=0; i<size; i++)
+		for(int i=0; i<personajes.Count; i++)
 		{
 			personajes[i].UpdateTextoPersonaje();
 		}
@@ -35,7 +33,7 @@ public class Controller : MonoBehaviour {
 		if (Sala.timer - mLastTimeUpdated > mIntervalToUpdate)
 		{
 			mLastTimeUpdated = Sala.timer;
-			for(int i=0; i<size; i++)
+			for(int i=0; i<personajes.Count; i++)
 			{
 				personajes[i].UpdatePercepcion();
 				personajes[i].UpdatePersonaje();
@@ -64,7 +62,16 @@ public class Controller : MonoBehaviour {
 		{
 			personajes[i].GetPersonajesDeInteres().Remove(p);
 		}
+		
+		// Si el muerto es el asesino, reiniciar los estados
+		if(p.GetComponent<Asesino>() != null){
+			ResetearEstados();
+		}
+		
+		//p.GetComponent<Collider>().enabled = false;
 		GameObject.Destroy(p);
+		
+		
 	}
 
     public void GenerarAsesino()
@@ -75,8 +82,17 @@ public class Controller : MonoBehaviour {
             personajes.Add(a);
             foreach (Personaje p in personajes)
             {
-                if (p.GetComponent<Roomba>() == null) p.AddInteraccionAsesino();
+                if (p.GetComponent<Roomba>() == null && p.GetComponent<Asesino>() == null) p.AddInteraccionAsesino();
             }
         }
     }
+	
+	private void ResetearEstados(){
+		int size = personajes.Count;
+		for(int i=0; i<size; i++)
+		{
+			if (personajes[i].GetComponent<Roomba>() == null)
+				personajes[i].GetFSM().ChangeState(personajes[i].GetEstadoInicial());
+		}
+	}
 }

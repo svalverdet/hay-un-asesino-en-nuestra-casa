@@ -17,11 +17,12 @@ public class Asesino : Personaje {
 		ChangeLocation(Sala.Location.Bar);
 		
 		mVejiga = 0;
-		ALERTA_VEJIGA = 400;
+		ALERTA_VEJIGA = 250;
 		
+		mEstadoInicial = BuscarVictima.GetInstance();
 		mFSM = new FSM(this);
-		mFSM.SetCurrentState(BuscarVictima.GetInstance());
-		mFSM.SetPreviousState(BuscarVictima.GetInstance());
+		mFSM.SetCurrentState(mEstadoInicial);
+		mFSM.SetPreviousState(mEstadoInicial);
 		mFSM.SetGlobalState(GlobalStateAsesino.GetInstance());
 		mFSM.GetCurrentState().Enter(this);
 		

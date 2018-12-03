@@ -26,13 +26,7 @@ public class GlobalStateAsesino : GenericState{
 		{
 			personaje.GetFSM().ChangeState(PerseguirVictima.GetInstance());
 		}
-		else if(a.TienePis() 
-			&& (personaje.GetFSM().GetCurrentState() != EstarEnElWCAsesino.GetInstance())
-			&& (personaje.GetFSM().GetCurrentState() != PerseguirVictima.GetInstance()))
-		{
-			personaje.println("Ay que me hago pis!!");
-			personaje.GetFSM().ChangeState(EstarEnElWCAsesino.GetInstance());
-		}
+		
 			
 	}
 	override public void Exit(Personaje personaje){

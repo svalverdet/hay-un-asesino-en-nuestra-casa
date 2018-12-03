@@ -4,9 +4,73 @@ using UnityEngine;
 
 public class GenericSmartObject : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+	public float advertisedVejigaAdjustment;
+	public float advertisedAburrimientoAdjustment;
+	//public string requiredItem;
+	//public string actionRemoveItem;
+	//public string actionAddItem;
+	public List<Personaje> allowedUsers;
+	public bool inUse;
+	public float actionVejigaAdjustment;
+	public float actionAburrimientoAdjustment;
+	public float vejigaToReach;
+	public float aburrimientoToReach;
+	//public string actionAnimation;
+	
+	public enum Tipo{Vater, Juguete, Asiento, Cerveza};
+	public Tipo tipo;
+	
+	public void Start(){
+		// register with the manager
+		Sala.AddSmartObject(this);
+		inUse = false;
+	}
+	
+	public bool CheckRequirements(Personaje personaje){
+		bool canUse = false;
+		if(!inUse){
+			System.Type este = personaje.GetType();
+			
+			//comprobar si personaje lo tiene permitido
+			for(int i=0; i<allowedUsers.Count; i++)
+			{
+				System.Type aquel = allowedUsers[i].GetType();
+				if(este.Equals(aquel)){
+					canUse = true;
+				}
+			}
+		}
+		return canUse;
+	}
+	
+	public float CheckHappiness(Personaje personaje){
+
+		float actualUrgencies = personaje.GetUrgency(personaje.GetVejiga(), personaje.GetAburrimiento());
+		float updatedUrgencies = personaje.GetUrgency(personaje.GetVejiga()+advertisedVejigaAdjustment, personaje.GetAburrimiento()+advertisedAburrimientoAdjustment);
+		float happiness = actualUrgencies - updatedUrgencies;
 		
+		Vector3 dist = personaje.transform.position - this.transform.position;
+		float distance = Mathf.Clamp(dist.sqrMagnitude*0.0001f, 0.0f, 0.1f);
+		happiness-=distance;
+		return happiness;
+		
+	}
+	
+	// This could be placed in a separate component so you can add different components for different objects.
+	public void Use(Personaje personaje){
+		//personaje.attributes.Remove(actionRemoveItem);
+		//personaje.attributes.Add(actionAddItem);
+		personaje.AddVejiga(actionVejigaAdjustment);
+		personaje.AddAburrimiento(actionAburrimientoAdjustment);
+		
+		//personaje.animation.Play(actionAnimation);
+	}
+	
+	
+	public bool checkUseFinished(Personaje personaje){
+		if(personaje.GetVejiga()<vejigaToReach) return true;
+		else if(personaje.GetAburrimiento()<aburrimientoToReach) return true;
+		else return false;
 	}
 	
 	

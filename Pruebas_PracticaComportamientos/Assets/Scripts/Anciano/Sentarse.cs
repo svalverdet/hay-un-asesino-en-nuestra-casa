@@ -21,25 +21,37 @@ public class Sentarse : GenericState {
     override public void Enter(Personaje personaje)
     {
         personaje.println("Voy a sentarme");
-        personaje.GoTo(Sala.GetSeatLocation(personaje));
+		if(personaje.GetSmartObjectInUse() != null){
+			personaje.GoTo(personaje.GetSmartObjectInUse().transform.position);
+		}else{
+			personaje.GetFSM().ChangeState(Deambular.GetInstance());
+		}
+		
     }
 
     override public void Execute(Personaje personaje)
     {
-		Anciano a = (Anciano) personaje;
-        if (personaje.PathComplete() && !a.IsSit())
+		
+		if (personaje.PathComplete())
         {
             personaje.println("Me siento");
-            a.SetSit(true);
-        }
-		else if (a.IsSit() && Random.value * 100 < 10)
-        {
-            personaje.GetFSM().ChangeState(Deambular.GetInstance());
+			personaje.GetSmartObjectInUse().Use(personaje);
+			
+			// Si ha terminado de consumir el objeto, cambia de estado
+			if(personaje.GetSmartObjectInUse().checkUseFinished(personaje)){
+				personaje.GetSmartObjectInUse().inUse = false;
+				personaje.SetSmartObjectInUse(null);
+				personaje.GetFSM().ChangeState(NinoIdle.GetInstance());
+			}
         }
     }
 	
     override public void Exit(Personaje personaje)
     {
+		if(personaje.GetSmartObjectInUse() != null){
+			personaje.GetSmartObjectInUse().inUse = false;
+			personaje.SetSmartObjectInUse(null);
+		}
     }
 	
 }

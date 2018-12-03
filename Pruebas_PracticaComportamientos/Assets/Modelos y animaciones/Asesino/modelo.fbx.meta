@@ -1,0 +1,1121 @@
+fileFormatVersion: 2
+guid: 333c3895fcd443740a98ec0c44f513f9
+timeCreated: 1543696430
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.000
+    100002: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.001
+    100004: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.002
+    100006: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.003
+    100008: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.004
+    100010: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.005
+    100012: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.006
+    100014: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.007
+    100016: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.008
+    100018: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.009
+    100020: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.010
+    100022: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.011
+    100024: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.012
+    100026: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.013
+    100028: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.014
+    100030: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.015
+    100032: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.016
+    100034: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.017
+    100036: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.018
+    100038: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.019
+    100040: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.020
+    100042: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.021
+    100044: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.022
+    100046: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.023
+    100048: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.024
+    100050: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.025
+    100052: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.026
+    100054: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.027
+    100056: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.028
+    100058: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.029
+    100060: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.030
+    100062: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.031
+    100064: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.032
+    100066: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.033
+    100068: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.034
+    100070: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.035
+    100072: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.036
+    100074: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.037
+    100076: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.038
+    100078: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.039
+    100080: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.040
+    100082: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.041
+    100084: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.042
+    100086: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.043
+    100088: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.044
+    100090: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.045
+    100092: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.046
+    100094: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.047
+    100096: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.048
+    100098: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.049
+    100100: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.050
+    100102: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.051
+    100104: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.052
+    100106: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjustforr
+    100108: mixamorig:Head
+    100110: mixamorig:HeadTop_End
+    100112: mixamorig:Hips
+    100114: mixamorig:LeftArm
+    100116: mixamorig:LeftFoot
+    100118: mixamorig:LeftForeArm
+    100120: mixamorig:LeftHand
+    100122: mixamorig:LeftHandIndex1
+    100124: mixamorig:LeftHandIndex2
+    100126: mixamorig:LeftHandIndex3
+    100128: mixamorig:LeftHandIndex4
+    100130: mixamorig:LeftLeg
+    100132: mixamorig:LeftShoulder
+    100134: mixamorig:LeftToe_End
+    100136: mixamorig:LeftToeBase
+    100138: mixamorig:LeftUpLeg
+    100140: mixamorig:Neck
+    100142: mixamorig:RightArm
+    100144: mixamorig:RightFoot
+    100146: mixamorig:RightForeArm
+    100148: mixamorig:RightHand
+    100150: mixamorig:RightHandIndex1
+    100152: mixamorig:RightHandIndex2
+    100154: mixamorig:RightHandIndex3
+    100156: mixamorig:RightHandIndex4
+    100158: mixamorig:RightLeg
+    100160: mixamorig:RightShoulder
+    100162: mixamorig:RightToe_End
+    100164: mixamorig:RightToeBase
+    100166: mixamorig:RightUpLeg
+    100168: mixamorig:Spine
+    100170: mixamorig:Spine1
+    100172: mixamorig:Spine2
+    100174: //RootNode
+    400000: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.000
+    400002: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.001
+    400004: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.002
+    400006: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.003
+    400008: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.004
+    400010: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.005
+    400012: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.006
+    400014: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.007
+    400016: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.008
+    400018: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.009
+    400020: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.010
+    400022: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.011
+    400024: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.012
+    400026: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.013
+    400028: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.014
+    400030: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.015
+    400032: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.016
+    400034: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.017
+    400036: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.018
+    400038: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.019
+    400040: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.020
+    400042: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.021
+    400044: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.022
+    400046: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.023
+    400048: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.024
+    400050: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.025
+    400052: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.026
+    400054: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.027
+    400056: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.028
+    400058: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.029
+    400060: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.030
+    400062: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.031
+    400064: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.032
+    400066: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.033
+    400068: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.034
+    400070: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.035
+    400072: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.036
+    400074: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.037
+    400076: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.038
+    400078: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.039
+    400080: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.040
+    400082: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.041
+    400084: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.042
+    400086: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.043
+    400088: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.044
+    400090: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.045
+    400092: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.046
+    400094: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.047
+    400096: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.048
+    400098: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.049
+    400100: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.050
+    400102: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.051
+    400104: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.052
+    400106: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjustforr
+    400108: mixamorig:Head
+    400110: mixamorig:HeadTop_End
+    400112: mixamorig:Hips
+    400114: mixamorig:LeftArm
+    400116: mixamorig:LeftFoot
+    400118: mixamorig:LeftForeArm
+    400120: mixamorig:LeftHand
+    400122: mixamorig:LeftHandIndex1
+    400124: mixamorig:LeftHandIndex2
+    400126: mixamorig:LeftHandIndex3
+    400128: mixamorig:LeftHandIndex4
+    400130: mixamorig:LeftLeg
+    400132: mixamorig:LeftShoulder
+    400134: mixamorig:LeftToe_End
+    400136: mixamorig:LeftToeBase
+    400138: mixamorig:LeftUpLeg
+    400140: mixamorig:Neck
+    400142: mixamorig:RightArm
+    400144: mixamorig:RightFoot
+    400146: mixamorig:RightForeArm
+    400148: mixamorig:RightHand
+    400150: mixamorig:RightHandIndex1
+    400152: mixamorig:RightHandIndex2
+    400154: mixamorig:RightHandIndex3
+    400156: mixamorig:RightHandIndex4
+    400158: mixamorig:RightLeg
+    400160: mixamorig:RightShoulder
+    400162: mixamorig:RightToe_End
+    400164: mixamorig:RightToeBase
+    400166: mixamorig:RightUpLeg
+    400168: mixamorig:Spine
+    400170: mixamorig:Spine1
+    400172: mixamorig:Spine2
+    400174: //RootNode
+    2100000: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_shoe_lambert3
+    2100002: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_shoe_lambert4
+    2100004: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_lambert5SG
+    2100006: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_lambert4SG
+    2100008: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_anisotropic1S
+    2100010: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_aceshelmet_in
+    2100012: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_lambert8SG
+    2100014: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_blinn2SG
+    2100016: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_aceshelme.000
+    2100018: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_blinn1SG
+    2100020: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_lambert3SG
+    2100022: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_lambert6SG
+    2100024: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_aceshelmet_em
+    2100026: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_blinn3SG
+    4300000: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.052
+    4300002: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.051
+    4300004: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.050
+    4300006: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.049
+    4300008: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.048
+    4300010: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.047
+    4300012: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.046
+    4300014: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.045
+    4300016: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.044
+    4300018: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.043
+    4300020: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.042
+    4300022: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.041
+    4300024: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.040
+    4300026: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.039
+    4300028: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.038
+    4300030: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.037
+    4300032: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.036
+    4300034: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.035
+    4300036: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.034
+    4300038: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.033
+    4300040: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.032
+    4300042: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.031
+    4300044: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.030
+    4300046: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.029
+    4300048: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.028
+    4300050: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.027
+    4300052: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.026
+    4300054: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.025
+    4300056: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.024
+    4300058: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.023
+    4300060: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.022
+    4300062: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.021
+    4300064: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.020
+    4300066: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.019
+    4300068: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.018
+    4300070: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.017
+    4300072: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.016
+    4300074: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.015
+    4300076: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.014
+    4300078: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.013
+    4300080: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.012
+    4300082: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.011
+    4300084: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.010
+    4300086: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.009
+    4300088: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.008
+    4300090: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.007
+    4300092: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.006
+    4300094: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.005
+    4300096: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.004
+    4300098: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.003
+    4300100: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.002
+    4300102: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.001
+    4300104: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.000
+    4300106: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjustforr
+    7400000: mixamo.com
+    9500000: //RootNode
+    13700000: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.000
+    13700002: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.001
+    13700004: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.002
+    13700006: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.003
+    13700008: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.004
+    13700010: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.005
+    13700012: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.006
+    13700014: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.007
+    13700016: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.008
+    13700018: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.009
+    13700020: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.010
+    13700022: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.011
+    13700024: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.012
+    13700026: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.013
+    13700028: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.014
+    13700030: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.015
+    13700032: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.016
+    13700034: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.017
+    13700036: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.018
+    13700038: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.019
+    13700040: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.020
+    13700042: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.021
+    13700044: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.022
+    13700046: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.023
+    13700048: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.024
+    13700050: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.025
+    13700052: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.026
+    13700054: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.027
+    13700056: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.028
+    13700058: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.029
+    13700060: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.030
+    13700062: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.031
+    13700064: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.032
+    13700066: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.033
+    13700068: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.034
+    13700070: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.035
+    13700072: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.036
+    13700074: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.037
+    13700076: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.038
+    13700078: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.039
+    13700080: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.040
+    13700082: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.041
+    13700084: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.042
+    13700086: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.043
+    13700088: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.044
+    13700090: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.045
+    13700092: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.046
+    13700094: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.047
+    13700096: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.048
+    13700098: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.049
+    13700100: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.050
+    13700102: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.051
+    13700104: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.052
+    13700106: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjustforr
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_aceshelme.000
+    second: {fileID: 2100000, guid: db00558e5ae0d1e47ba6c7bfcc617d6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_aceshelmet_em
+    second: {fileID: 2100000, guid: 333467c2e9e567a44be5998d9e9d5ec2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_aceshelmet_in
+    second: {fileID: 2100000, guid: e70e170278314084f99a3ae665870871, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_anisotropic1S
+    second: {fileID: 2100000, guid: 1ae1f236fa00039429e4fb33df42701c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_blinn1SG
+    second: {fileID: 2100000, guid: e61b633521843c24aa92647d80384ff8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_blinn2SG
+    second: {fileID: 2100000, guid: d1f11387c15f07045bb9295d37f10ef9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_blinn3SG
+    second: {fileID: 2100000, guid: 4cf35c5f343f1ab4bb49de13e4eff1be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_lambert3SG
+    second: {fileID: 2100000, guid: 38bea30703a9fd94b9c1b506d40b9e35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_lambert4SG
+    second: {fileID: 2100000, guid: e58d51365f8e8ac4684ad382e16c16d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_lambert5SG
+    second: {fileID: 2100000, guid: 5ef77c54f24b2cb4ba4f7c21eee93f49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_lambert6SG
+    second: {fileID: 2100000, guid: 772ef971fd404db4c8aa8c90446b803c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_lambert8SG
+    second: {fileID: 2100000, guid: 65576ee8a59e40c40ac1b1c674e5a1ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_shoe_lambert3
+    second: {fileID: 2100000, guid: 13a60b0ffc0bb3948bcdaae039da568c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acesjustforroomshow_ACES_INTERIOR_OBJ_ACES8_sized_shoe_lambert4
+    second: {fileID: 2100000, guid: 5e994f851687cca4d93b6a728c96b852, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.03
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: mixamorig:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: modelo(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.000
+      parentName: modelo(Clone)
+      position: {x: -0.008836332, y: 1.7836571, z: -0.12635018}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.001
+      parentName: modelo(Clone)
+      position: {x: -0.019294322, y: 2.230107, z: -0.10246935}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.002
+      parentName: modelo(Clone)
+      position: {x: -0.0000000071525563, y: 1.4345875, z: 0.12847894}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.003
+      parentName: modelo(Clone)
+      position: {x: -0.20092972, y: 2.7341368, z: 0.25837493}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.004
+      parentName: modelo(Clone)
+      position: {x: -0.52791214, y: 1.81637, z: -0.014861896}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.005
+      parentName: modelo(Clone)
+      position: {x: -0.20045774, y: 2.7632093, z: 0.24947715}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.006
+      parentName: modelo(Clone)
+      position: {x: -0.008702479, y: 2.1513588, z: -0.12016317}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.007
+      parentName: modelo(Clone)
+      position: {x: -0.0063216, y: 2.225763, z: -0.09985607}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.008
+      parentName: modelo(Clone)
+      position: {x: -0.2073376, y: 2.7383916, z: 0.24683088}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.009
+      parentName: modelo(Clone)
+      position: {x: -0.009052077, y: 2.1809402, z: -0.10893664}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.010
+      parentName: modelo(Clone)
+      position: {x: 0.23717703, y: 2.7403123, z: 0.22837946}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.011
+      parentName: modelo(Clone)
+      position: {x: -0.1881439, y: 2.7413924, z: 0.27508822}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.012
+      parentName: modelo(Clone)
+      position: {x: -0.49486247, y: 1.6554877, z: -0.19024666}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.013
+      parentName: modelo(Clone)
+      position: {x: -0.0050663846, y: 2.2581265, z: -0.09017988}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.014
+      parentName: modelo(Clone)
+      position: {x: -0.13135438, y: 2.7076359, z: 0.30445364}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.015
+      parentName: modelo(Clone)
+      position: {x: 0.24828674, y: 2.7416716, z: 0.23300041}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.016
+      parentName: modelo(Clone)
+      position: {x: 0.27370948, y: 0.14783937, z: -0.08782749}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.017
+      parentName: modelo(Clone)
+      position: {x: 0.5256505, y: 1.8097978, z: -0.086285755}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.018
+      parentName: modelo(Clone)
+      position: {x: 0.020208167, y: 2.7148442, z: 0.1207552}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.019
+      parentName: modelo(Clone)
+      position: {x: -0.007048211, y: 2.2511075, z: -0.105823755}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.020
+      parentName: modelo(Clone)
+      position: {x: 0.23126508, y: 2.7395973, z: 0.2645146}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.021
+      parentName: modelo(Clone)
+      position: {x: -0.008585291, y: 2.4521317, z: -0.092456296}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.022
+      parentName: modelo(Clone)
+      position: {x: -0.16531868, y: 2.7393181, z: 0.30269045}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.023
+      parentName: modelo(Clone)
+      position: {x: -0.007654226, y: 1.7782344, z: -0.10862771}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.024
+      parentName: modelo(Clone)
+      position: {x: 0.24707524, y: 2.7178535, z: 0.23683071}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.025
+      parentName: modelo(Clone)
+      position: {x: -0.02808316, y: 2.1900656, z: -0.10699924}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.026
+      parentName: modelo(Clone)
+      position: {x: 0.13068315, y: 2.3861973, z: 0.1228596}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.027
+      parentName: modelo(Clone)
+      position: {x: -0.10787315, y: 2.3861957, z: 0.12257434}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.028
+      parentName: modelo(Clone)
+      position: {x: 0.0152319195, y: 2.6804855, z: 0.04080698}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.029
+      parentName: modelo(Clone)
+      position: {x: 0.019660214, y: 2.5712237, z: 0.09592253}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.030
+      parentName: modelo(Clone)
+      position: {x: -0.19638273, y: 2.7012608, z: 0.26392832}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.031
+      parentName: modelo(Clone)
+      position: {x: -0.021704763, y: 2.1989002, z: -0.11230396}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.032
+      parentName: modelo(Clone)
+      position: {x: 0.0152319195, y: 2.6804855, z: 0.04080698}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.033
+      parentName: modelo(Clone)
+      position: {x: 0.017218405, y: 2.6732242, z: 0.032410208}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.034
+      parentName: modelo(Clone)
+      position: {x: -0.20405619, y: 2.774247, z: 0.22973773}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.035
+      parentName: modelo(Clone)
+      position: {x: 0.0152319195, y: 2.6804855, z: 0.04080698}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.036
+      parentName: modelo(Clone)
+      position: {x: -0.0075879274, y: 1.2924565, z: -0.07281436}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.037
+      parentName: modelo(Clone)
+      position: {x: 0.2537936, y: 2.70154, z: 0.22069801}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.038
+      parentName: modelo(Clone)
+      position: {x: 0.48090875, y: 1.6810232, z: -0.25227246}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.039
+      parentName: modelo(Clone)
+      position: {x: 0.005381923, y: 2.2001035, z: -0.120121576}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.040
+      parentName: modelo(Clone)
+      position: {x: 0.0152319195, y: 2.6804855, z: 0.04080698}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.041
+      parentName: modelo(Clone)
+      position: {x: -0.17858994, y: 2.7400322, z: 0.2682303}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.042
+      parentName: modelo(Clone)
+      position: {x: 0.19803889, y: 2.7076359, z: 0.2710801}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.043
+      parentName: modelo(Clone)
+      position: {x: 0.119685434, y: 1.7451248, z: -0.10979459}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.044
+      parentName: modelo(Clone)
+      position: {x: 0.00025623318, y: 2.4521317, z: -0.093325}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.045
+      parentName: modelo(Clone)
+      position: {x: 0.23724855, y: 2.716814, z: 0.25893256}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.046
+      parentName: modelo(Clone)
+      position: {x: -0.13515301, y: 1.7451121, z: -0.0840502}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.047
+      parentName: modelo(Clone)
+      position: {x: -0.17227374, y: 2.7165344, z: 0.298377}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.048
+      parentName: modelo(Clone)
+      position: {x: -0.21716286, y: 2.73942, z: 0.22741187}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.049
+      parentName: modelo(Clone)
+      position: {x: 0.0134792775, y: 2.1900132, z: -0.111233115}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.050
+      parentName: modelo(Clone)
+      position: {x: -0.0042510754, y: 2.2767315, z: -0.085938126}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.051
+      parentName: modelo(Clone)
+      position: {x: 0.0009642076, y: 2.0242841, z: 0.071491234}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjust.052
+      parentName: modelo(Clone)
+      position: {x: -0.2913881, y: 0.14783937, z: -0.028584877}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: acesjustforroomshow_ACES_INTERIOR_OBJ_polySurface1_acesjustforr
+      parentName: modelo(Clone)
+      position: {x: -0.18665585, y: 2.7175744, z: 0.27844617}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: mixamorig:Hips
+      parentName: modelo(Clone)
+      position: {x: 0.009869704, y: 1.4520298, z: -0.0052951984}
+      rotation: {x: -0.03828696, y: -0.044256635, z: -0.033683933, w: 0.99771786}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Spine
+      parentName: mixamorig:Hips
+      position: {x: -0, y: 0.18121374, z: -0.003703637}
+      rotation: {x: 0.030329628, y: 0.006820338, z: -0.012539685, w: 0.99943805}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Spine1
+      parentName: mixamorig:Spine
+      position: {x: -0, y: 0.21146034, z: 1.1206484e-10}
+      rotation: {x: 0.08638132, y: 0.0087061515, z: -0.02546286, w: 0.99589866}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Spine2
+      parentName: mixamorig:Spine1
+      position: {x: -0, y: 0.24166895, z: 2.6287292e-11}
+      rotation: {x: 0.08643286, y: 0.008160921, z: -0.025467848, w: 0.99589866}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Neck
+      parentName: mixamorig:Spine2
+      position: {x: -0, y: 0.27187738, z: -0.000000007914465}
+      rotation: {x: 0.0051618433, y: -0.015694201, z: 0.04733204, w: 0.9987426}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Head
+      parentName: mixamorig:Neck
+      position: {x: -0, y: 0.07295976, z: 0.0016955563}
+      rotation: {x: 0.043539923, y: -0.01942457, z: 0.056288607, w: 0.9972756}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:HeadTop_End
+      parentName: mixamorig:Head
+      position: {x: -0, y: 0.5220134, z: 0.012131396}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightShoulder
+      parentName: mixamorig:Spine2
+      position: {x: 0.109595, y: 0.22151662, z: -0.010464033}
+      rotation: {x: -0.55449075, y: -0.4389948, z: 0.5686269, w: -0.42010373}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightArm
+      parentName: mixamorig:RightShoulder
+      position: {x: -7.321441e-10, y: 0.23394644, z: 1.08345374e-10}
+      rotation: {x: -0.15105541, y: 0.07386343, z: -0.00018140665, w: 0.98576194}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightForeArm
+      parentName: mixamorig:RightArm
+      position: {x: -7.7799917e-10, y: 0.24812095, z: 4.0245624e-10}
+      rotation: {x: -0.019188527, y: 0.18986031, z: 0.01867864, w: 0.9814459}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHand
+      parentName: mixamorig:RightForeArm
+      position: {x: -0.000000009522019, y: 0.47884682, z: -0.0000000083136555}
+      rotation: {x: -0.025226317, y: 0.032222964, z: -0.085659, w: 0.99548376}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandIndex1
+      parentName: mixamorig:RightHand
+      position: {x: -0.0000000011845109, y: 0.23546608, z: -0.0000000013804629}
+      rotation: {x: 0.07066052, y: 0.00512524, z: 0.027787386, w: 0.9971002}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandIndex2
+      parentName: mixamorig:RightHandIndex1
+      position: {x: 4.9508436e-10, y: 0.020665351, z: 8.908173e-11}
+      rotation: {x: 0.03318993, y: -0.004122861, z: 0.12893306, w: 0.9910892}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandIndex3
+      parentName: mixamorig:RightHandIndex2
+      position: {x: 0.006746967, y: 0.028775778, z: 0.00012853001}
+      rotation: {x: -0.14762244, y: 0.02146846, z: 0.24814263, w: 0.95716876}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandIndex4
+      parentName: mixamorig:RightHandIndex3
+      position: {x: 0.009601418, y: 0.010757252, z: 0.0055102166}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftShoulder
+      parentName: mixamorig:Spine2
+      position: {x: -0.109595, y: 0.22113113, z: 0.008397585}
+      rotation: {x: 0.5291886, y: -0.4358059, z: 0.62559783, w: 0.37237096}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftArm
+      parentName: mixamorig:LeftShoulder
+      position: {x: 1.409847e-10, y: 0.23394644, z: 6.536765e-11}
+      rotation: {x: -0.145019, y: -0.28329384, z: -0.048223365, w: 0.94677806}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftForeArm
+      parentName: mixamorig:LeftArm
+      position: {x: 0.0000000018885407, y: 0.252008, z: 6.00317e-11}
+      rotation: {x: -0.022323877, y: 0.06370856, z: -0.014205292, w: 0.9976178}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHand
+      parentName: mixamorig:LeftForeArm
+      position: {x: 0.0000000073912094, y: 0.4987712, z: -0.0000000043717954}
+      rotation: {x: 0.03362207, y: -0.17709978, z: -0.014306093, w: 0.9835144}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandIndex1
+      parentName: mixamorig:LeftHand
+      position: {x: 0.0000000065717605, y: 0.2197547, z: -0.000000005491798}
+      rotation: {x: 0.07360497, y: -0.000049281687, z: -0.022772865, w: 0.99702746}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandIndex2
+      parentName: mixamorig:LeftHandIndex1
+      position: {x: -2.980323e-10, y: 0.01646404, z: -3.7298376e-12}
+      rotation: {x: 0.012808534, y: 0.0033772443, z: -0.095618434, w: 0.9953299}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandIndex3
+      parentName: mixamorig:LeftHandIndex2
+      position: {x: -0.0044115973, y: 0.025851505, z: 0.0012494898}
+      rotation: {x: 0.08807528, y: 0.018128395, z: -0.047457017, w: 0.99481755}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandIndex4
+      parentName: mixamorig:LeftHandIndex3
+      position: {x: -0.004472699, y: 0.018255899, z: -0.0010129826}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightUpLeg
+      parentName: mixamorig:Hips
+      position: {x: 0.16391331, y: -0.10069891, z: 0.0055538625}
+      rotation: {x: 0.094318524, y: 0.018686675, z: 0.9942858, w: -0.04637394}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightLeg
+      parentName: mixamorig:RightUpLeg
+      position: {x: -0.0000000010965507, y: 0.59672827, z: -0.0000000013447922}
+      rotation: {x: -0.24776378, y: 0.051009778, z: -0.0172033, w: 0.9673237}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightFoot
+      parentName: mixamorig:RightLeg
+      position: {x: -5.36169e-10, y: 0.57861376, z: 0.0000000016257794}
+      rotation: {x: 0.66818947, y: -0.021470169, z: 0.012952245, w: 0.74356854}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightToeBase
+      parentName: mixamorig:RightFoot
+      position: {x: -2.8866362e-10, y: 0.3371699, z: 0.0000000029319918}
+      rotation: {x: 0.3236736, y: -0.088443846, z: 0.030404538, w: 0.9415353}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightToe_End
+      parentName: mixamorig:RightToeBase
+      position: {x: 3.5304606e-11, y: 0.12858157, z: -5.1225805e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftUpLeg
+      parentName: mixamorig:Hips
+      position: {x: -0.16391331, y: -0.10069891, z: 0.02803117}
+      rotation: {x: -0.14866576, y: 0.042729367, z: 0.98564094, w: 0.067710064}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftLeg
+      parentName: mixamorig:LeftUpLeg
+      position: {x: 3.3668282e-10, y: 0.59775186, z: 2.7566296e-10}
+      rotation: {x: -0.14399467, y: -0.07150239, z: 0.015022212, w: 0.98687756}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftFoot
+      parentName: mixamorig:LeftLeg
+      position: {x: -3.805923e-10, y: 0.5782048, z: 6.9366035e-10}
+      rotation: {x: 0.5241973, y: 0.01954866, z: 0.003102872, w: 0.8513668}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftToeBase
+      parentName: mixamorig:LeftFoot
+      position: {x: -2.2341803e-10, y: 0.35457316, z: 0.0000000131417535}
+      rotation: {x: 0.30582026, y: 0.08530199, z: -0.027522001, w: 0.94786084}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftToe_End
+      parentName: mixamorig:LeftToeBase
+      position: {x: 9.761579e-10, y: 0.14020884, z: -3.650345e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

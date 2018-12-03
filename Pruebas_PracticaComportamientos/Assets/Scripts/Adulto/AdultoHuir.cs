@@ -21,10 +21,14 @@ public class AdultoHuir : GenericState {
     override public void Enter(Personaje personaje)
     {
         Asesino asesino = ((Adulto)personaje).GetAsesino();
-        Vector3 dist = personaje.transform.position - asesino.transform.position;
-        dist = dist.normalized;
-        personaje.GoTo(personaje.transform.position + dist * 5);
-        personaje.println("ERA MENTIRA NO FUI MILITAR");
+		if(asesino!=null){
+			Vector3 dist = personaje.transform.position - asesino.transform.position;
+			dist = dist.normalized;
+			personaje.GoTo(personaje.transform.position + dist * 5);
+			personaje.println("ERA MENTIRA NO FUI MILITAR");
+		}else{
+			personaje.GetFSM().ChangeState(EstarEnCasa.GetInstance());
+		}
     }
 
     override public void Execute(Personaje personaje)
@@ -33,10 +37,16 @@ public class AdultoHuir : GenericState {
         if (personaje.PathComplete())
         {
             Asesino asesino = ((Adulto)personaje).GetAsesino();
-            Vector3 dist = personaje.transform.position - asesino.transform.position;
-            dist = dist.normalized;
-            personaje.GoTo(personaje.transform.position + dist * 5);
+			if(asesino != null){
+				Vector3 dist = personaje.transform.position - asesino.transform.position;
+				dist = dist.normalized;
+				personaje.GoTo(personaje.transform.position + dist * 5);
+			}
+			else{
+				personaje.GetFSM().ChangeState(EstarEnCasa.GetInstance());
+			}
         }
+		
     }
     override public void Exit(Personaje personaje)
     {

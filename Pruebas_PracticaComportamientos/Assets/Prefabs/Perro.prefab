@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1900473333513076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.3046875, y: 2.23, z: 4.986328}
+  m_LocalPosition: {x: 10.81, y: 2.23, z: -4.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -128,6 +128,21 @@ MonoBehaviour:
   manchaCaca: {fileID: 1853001147002328, guid: aaae75c340e109649be76adfaf6d8889, type: 2}
   manchaSangre: {fileID: 1213563442193528, guid: 7d00192129c830b48bd4296ab9777d14,
     type: 2}
+  mVejiga: 0
+  mVejigaUrgency:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  mAburrimiento: 0
+  mAburrimientoUrgency:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  mSmartObjectInUse: {fileID: 0}
 --- !u!195 &195917482838457972
 NavMeshAgent:
   m_ObjectHideFlags: 1

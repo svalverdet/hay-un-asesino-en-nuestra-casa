@@ -15,14 +15,19 @@ public class RecibirBronca : GenericState{
 	
 	override public void Enter(Personaje personaje){
 		
-		//if(personaje.GetLocation() != Sala.Location.Salon){
-			personaje.println("Voooooooy!!");
-			Vector3 loc = ((Nino)personaje).GetAdultoBronca().transform.position;
+		personaje.println("Voooooooy!!");
+		Adulto a = ((Nino)personaje).GetAdultoBronca();
+		if(a!=null)
+		{
+			Vector3 loc = a.transform.position;
 			personaje.GoTo(loc);
-		//}else{
-			//personaje.Stop();
-		//}
+		}
+		else
+		{
+			personaje.GetFSM().RevertToPreviousState();
+		}
 	}
+	
 	override public void Execute(Personaje personaje){
 		
 		if(((Nino)personaje).GetAdultoBronca().GetNino() == personaje)

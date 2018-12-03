@@ -52,8 +52,11 @@ public class Deambular : GenericState{
             personaje.println(msg);
         }
 		
-        if(Random.value * 100 < 5)
-            personaje.GetFSM().ChangeState(Sentarse.GetInstance());
+        if(personaje.EstaAburrido()){
+			GenericSmartObject obj = Sala.CheckBestSmartObjectForMe(personaje);
+			if(obj!=null)
+				personaje.GetFSM().ChangeState(Sentarse.GetInstance());
+		}
 
     }
 	

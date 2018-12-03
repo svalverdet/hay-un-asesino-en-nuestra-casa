@@ -24,18 +24,18 @@ public class NinoGlobalState : GenericState {
         {
             a.GetFSM().ChangeState(Huir.GetInstance());
         }
-        else if(a.GetFSM().GetCurrentState() != NinoEstarEnElWC.GetInstance()  
+        /*else if(a.GetFSM().GetCurrentState() != NinoEstarEnElWC.GetInstance()  
 			&&  a.GetFSM().GetCurrentState() != RecibirBronca.GetInstance()
             && a.GetFSM().GetCurrentState() != Huir.GetInstance()
             &&  a.TienePis())
 		{
 			a.GetFSM().ChangeState(NinoEstarEnElWC.GetInstance());
-		}
+		}*/
 		else if(a.TieneVejigaAlLimite())
 		{
-			a.EfectosDelWC();
+			a.VaciarVejiga();
 			personaje.println("Me cagao encima");
-			personaje.Mancha(0);
+			if(personaje.GetLocation() != Sala.Location.Bar) personaje.Mancha(0);
 		}	
 	}
 	override public void Exit(Personaje personaje){

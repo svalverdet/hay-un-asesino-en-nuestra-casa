@@ -34,8 +34,6 @@ public class PerseguirVictima : GenericState {
 		if(distancia.sqrMagnitude < 9)
 		{
             // Si no es un adulto, me lo cargo
-            /*if (victima.GetComponent<Adulto>() == null)
-			{*/
             if (victima.GetHealth() <= 0)
             {
                 victima.GetFSM().ChangeState(Morir.GetInstance());
@@ -47,7 +45,6 @@ public class PerseguirVictima : GenericState {
                 victima.SetAsesino(a);
                 victima.Damaged();
             }
-			//}
 		}
 	}
 	override public void Exit(Personaje personaje){

@@ -17,12 +17,14 @@ public class Nino : Personaje {
 		ChangeLocation(Sala.Location.HabitacionNino);
 		
 		mVejiga = 0;
-		ALERTA_VEJIGA = 100;
+		ALERTA_VEJIGA = 60;
+		ALERTA_ABURRIMIENTO=30;
 		MAX_LIMITE_VEJIGA = 250;
 
+		mEstadoInicial = NinoIdle.GetInstance();
         mFSM = new FSM(this);
-		mFSM.SetCurrentState(Jugando.GetInstance());
-		mFSM.SetPreviousState(Jugando.GetInstance());
+		mFSM.SetCurrentState(mEstadoInicial);
+		mFSM.SetPreviousState(mEstadoInicial);
 		mFSM.SetGlobalState(NinoGlobalState.GetInstance());
 		mFSM.GetCurrentState().Enter(this);
 
@@ -37,6 +39,7 @@ public class Nino : Personaje {
 	{
 		mFSM.Update();
 		IncrementarVejiga();
+		IncrementarAburrimiento();
 	}
 
     override public void UpdatePercepcion()
@@ -56,9 +59,10 @@ public class Nino : Personaje {
 
     // Métodos
 
-    public void EfectosDelWC(){ this.mVejiga-=5; }
+    public void EfectosDelWC(){ this.mVejiga=0; }
 	
 	public void IncrementarVejiga(){ mVejiga+=1; }
+	public void IncrementarAburrimiento(){ mAburrimiento+=1;}
 	
 	public Adulto GetAdultoBronca(){ return this.mAdultoBronca; }
 

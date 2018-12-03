@@ -27,6 +27,13 @@ public class BuscarVictima : GenericState {
         {
             personaje.GoTo(Sala.GetRandomRoomPositionExcept(new Sala.Location[] { personaje.GetLocation(), Sala.Location.Bar }));
         }
+		
+		if(personaje.TienePis())
+		{
+			GenericSmartObject obj = Sala.CheckBestSmartObjectForMe(personaje);
+			if(obj!=null)
+				personaje.GetFSM().ChangeState(EstarEnElWCAsesino.GetInstance());
+		}
 	}
 	override public void Exit(Personaje personaje){
 	}

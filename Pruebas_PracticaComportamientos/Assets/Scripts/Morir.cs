@@ -28,7 +28,6 @@ public class Morir : GenericState
 
     override public void Execute(Personaje personaje)
     {
-        
     }
 	
     override public void Exit(Personaje personaje)

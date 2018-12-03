@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1932838783166304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.6, y: 1.14, z: 13.5}
+  m_LocalPosition: {x: 7.4, y: 1.14, z: -5.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -125,8 +125,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mName: Sandra
-  mLabel: {fileID: 0}
   manchaCaca: {fileID: 1853001147002328, guid: aaae75c340e109649be76adfaf6d8889, type: 2}
+  manchaSangre: {fileID: 1213563442193528, guid: 7d00192129c830b48bd4296ab9777d14,
+    type: 2}
+  mVejiga: 0
+  mVejigaUrgency:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  mAburrimiento: 0
+  mAburrimientoUrgency:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  mSmartObjectInUse: {fileID: 0}
 --- !u!195 &195614079050799054
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -136,7 +176,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

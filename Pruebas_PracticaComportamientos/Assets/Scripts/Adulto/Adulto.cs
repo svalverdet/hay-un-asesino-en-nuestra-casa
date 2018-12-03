@@ -19,12 +19,13 @@ public class Adulto : Personaje {
 		
 		mVejiga = 0;
 		mAburrimiento = 0;
-		ALERTA_ABURRIMIENTO = 100;
-		ALERTA_VEJIGA = 150;
+		ALERTA_ABURRIMIENTO = 60;
+		ALERTA_VEJIGA = 100;
 		
+		mEstadoInicial = EstarEnCasa.GetInstance();
 		mFSM = new FSM(this);
-		mFSM.SetCurrentState(EstarEnCasa.GetInstance());
-		mFSM.SetPreviousState(EstarEnCasa.GetInstance());
+		mFSM.SetCurrentState(mEstadoInicial);
+		mFSM.SetPreviousState(mEstadoInicial);
 		mFSM.SetGlobalState(GlobalStateAdulto.GetInstance());
 		mFSM.GetCurrentState().Enter(this);
 		
@@ -42,6 +43,7 @@ public class Adulto : Personaje {
 	{
 		mFSM.Update();
 		IncrementarVejiga();
+		IncrementarAburrimiento();
 	}
 	
 	override public void UpdatePercepcion()
@@ -81,7 +83,7 @@ public class Adulto : Personaje {
 	// Métodos
 	
 	public void IncrementarVejiga(){ mVejiga+=1;}
-	public void IncrementarAburrimiento(){ mAburrimiento+=2;}
+	public void IncrementarAburrimiento(){ mAburrimiento+=1;}
 	
 	public void EfectosDeLaBronca(){ mAburrimiento -= 5; }
 	public void EfectosDelWC(){mVejiga -= 4;}

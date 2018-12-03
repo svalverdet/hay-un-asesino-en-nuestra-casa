@@ -15,9 +15,10 @@ public class Roomba : Personaje {
         agent = GetComponent<NavMeshAgent>();
         ChangeLocation(Sala.Location.Cocina);
 
+		mEstadoInicial = IdleRoomba.GetInstance();
         mFSM = new FSM(this);
-        mFSM.SetCurrentState(IdleRoomba.GetInstance());
-        mFSM.SetPreviousState(IdleRoomba.GetInstance());
+        mFSM.SetCurrentState(mEstadoInicial);
+        mFSM.SetPreviousState(mEstadoInicial);
         mFSM.GetCurrentState().Enter(this);
 		
         // Variables propias

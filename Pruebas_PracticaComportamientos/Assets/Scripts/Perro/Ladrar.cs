@@ -44,7 +44,10 @@ public class Ladrar : GenericState {
         {
             foreach (Adulto a in adultos)
             {
-                if (a.GetFSM().GetCurrentState() != EstarEnElWC.GetInstance())
+                if (a.GetFSM().GetCurrentState() != EstarEnElWC.GetInstance() &&
+					a.GetFSM().GetCurrentState() != AdultoHuir.GetInstance() &&
+					a.GetFSM().GetCurrentState() != Morir.GetInstance() &&
+					a.GetFSM().GetCurrentState() != Golpear.GetInstance())
                     a.GetFSM().ChangeState(AtenderPerro.GetInstance());
             }
         }

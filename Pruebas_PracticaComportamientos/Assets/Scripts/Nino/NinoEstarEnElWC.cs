@@ -14,30 +14,37 @@ public class NinoEstarEnElWC : GenericState{
 	}
 	
 	override public void Enter(Personaje personaje){
-		personaje.GoTo(Sala.Location.WC);
-		personaje.println("Voy a cagar mierda");
+		
+		if(personaje.GetSmartObjectInUse() != null){
+			personaje.println("Voy a cagar mierda");
+			personaje.GoTo(personaje.GetSmartObjectInUse().transform.position);
+		}else{
+			personaje.GetFSM().ChangeState(NinoIdle.GetInstance());
+		}
 	}
 	
 	override public void Execute(Personaje personaje){
 		
-		if(personaje.PathComplete() && personaje.GetLocation() == Sala.Location.WC)
+		if(personaje.PathComplete())
 		{
 			personaje.println("Hago mi pipiii");
-			Nino a = (Nino) personaje;
-			a.EfectosDelWC();
-			if(a.GetVejiga()<0)
-			{
-				a.VaciarVejiga();
-				if(a.GetFSM().GetPreviousState() == RecibirBronca.GetInstance()){
-					a.GetFSM().ChangeState(Jugando.GetInstance());
-				}else{
-					a.GetFSM().ChangeState(a.GetFSM().GetPreviousState());
-				}
+			personaje.GetSmartObjectInUse().Use(personaje);
+			
+			// Si ha terminado de consumir el objeto, cambia de estado
+			if(personaje.GetSmartObjectInUse().checkUseFinished(personaje)){
+				personaje.GetSmartObjectInUse().inUse = false;
+				personaje.SetSmartObjectInUse(null);
+				personaje.GetFSM().ChangeState(NinoIdle.GetInstance());
 			}
 		}
+		
 	}
 	
 	override public void Exit(Personaje personaje){
 		personaje.println("Saliendo del WC");
+		if(personaje.GetSmartObjectInUse()!=null){
+			personaje.GetSmartObjectInUse().inUse = false;
+			personaje.SetSmartObjectInUse(null);
+		}
 	}
 }

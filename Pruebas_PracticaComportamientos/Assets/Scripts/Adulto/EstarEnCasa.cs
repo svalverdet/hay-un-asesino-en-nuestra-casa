@@ -21,22 +21,33 @@ public class EstarEnCasa : GenericState {
 	
 	override public void Execute(Personaje personaje){
 		
-		// Sólo entra si el personaje se encuentra ya en la localización
-		if(personaje.GetLocation() == Sala.Location.Salon){
-			
-			// Hacer cosas de casa
-			Adulto a = (Adulto) personaje;
-			a.IncrementarAburrimiento();
-			float rnd = Random.value * 100;
-			if(a.EstaAburrido()){
-				if(rnd<100){
-					personaje.GetFSM().ChangeState(EcharBronca.GetInstance());
-				}else{
-					personaje.GetFSM().ChangeState(EstarEnElBar.GetInstance());
+		
+		if(personaje.PathComplete())
+		{
+			if(personaje.TienePis() || personaje.EstaAburrido())
+			{
+				GenericSmartObject obj = Sala.CheckBestSmartObjectForMe(personaje);
+				if(obj!=null){
+					if(obj.tipo == GenericSmartObject.Tipo.Cerveza)
+					{
+						float rnd = Random.value * 100;
+						if(rnd<70){
+							personaje.GetSmartObjectInUse().inUse = false;
+							personaje.SetSmartObjectInUse(null);
+							personaje.GetFSM().ChangeState(EcharBronca.GetInstance());
+						}else{
+							personaje.GetFSM().ChangeState(EstarEnElBar.GetInstance());
+						}
+						
+					}
+					else if(obj.tipo == GenericSmartObject.Tipo.Vater)
+					{
+						personaje.GetFSM().ChangeState(EstarEnElWC.GetInstance());
+					}
 				}
-				
 			}
 		}
+		
 	}
 	override public void Exit(Personaje personaje){
 	}

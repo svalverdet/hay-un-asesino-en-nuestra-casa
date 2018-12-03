@@ -14,24 +14,36 @@ public class EstarEnElWCAsesino : GenericState{
 	}
 	
 	override public void Enter(Personaje personaje){
-		personaje.println("PASO QUE ME HAGO PIS");
-		personaje.GoTo(Sala.Location.WC);
+	
+		if(personaje.GetSmartObjectInUse() != null){
+			personaje.println("PASO QUE ME HAGO PIS");
+			personaje.GoTo(personaje.GetSmartObjectInUse().transform.position);
+		}else{
+			personaje.GetFSM().ChangeState(BuscarVictima.GetInstance());
+		}
 	}
 	
 	override public void Execute(Personaje personaje){
 		
-		if(personaje.PathComplete() && personaje.GetLocation() == Sala.Location.WC)
+		if(personaje.PathComplete())
 		{
-			Asesino a = (Asesino) personaje;
-			a.EfectosDelWC();
-			if(personaje.GetVejiga()<0)
-			{
-				personaje.VaciarVejiga();
-				personaje.GetFSM().ChangeState(personaje.GetFSM().GetPreviousState());
+			personaje.println("Hago mi pipiii");
+			personaje.GetSmartObjectInUse().Use(personaje);
+			
+			// Si ha terminado de consumir el objeto, cambia de estado
+			if(personaje.GetSmartObjectInUse().checkUseFinished(personaje)){
+				personaje.GetSmartObjectInUse().inUse = false;
+				personaje.SetSmartObjectInUse(null);
+				Debug.Log("YA HE TERMINADO");
+				personaje.GetFSM().ChangeState(BuscarVictima.GetInstance());
 			}
 		}
 	}
 	override public void Exit(Personaje personaje){
-		personaje.println("Jo, cómo me estaba meando");
+		if(personaje.GetSmartObjectInUse()!=null){
+			personaje.println("Jo, cómo me estaba meando");
+			personaje.GetSmartObjectInUse().inUse = false;
+			personaje.SetSmartObjectInUse(null);
+		}
 	}
 }
